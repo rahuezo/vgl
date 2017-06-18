@@ -1,0 +1,71 @@
+body {
+	padding-top: 50px;
+	
+}
+.navbar {
+	border-radius: 0px;
+	margin-bottom: 0px;
+	background-color: #333;
+	padding-left: 10%;
+	padding-right: 10%; 
+}
+
+.jumbotron {
+	border-radius: 0px;
+	background-color: #77dd77;
+	margin-bottom: 0px; 
+}
+
+.jumbotron.contact-info {
+	/*margin-top: 10px;*/
+	/*max-width: 90%; */
+}
+
+.jumbotron.contact-info.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px; 
+}
+
+.jumbotron h1 {
+	color: #155415;
+	font-size: 36px;
+}
+
+.glyphicon, #address, #phone, #email {
+	font-size: 22px;
+	color: #155415; 
+}
+
+hr.custom-hr { 
+  border-top: 1px dashed rgb(0, 150, 90);
+  width: 50%; 
+}
+
+label {
+	color: #575702;
+	font-size: 22px;
+	text-align: left; 
+}
+
+.email-form {
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+}
+
+#form-msg {
+	color: #575702;
+	font-size: 20px; 
+}
+
+#email-form-container {
+	background-color: #fdfd96;
+	width: 100%;
+	padding: 10px; 
+}
+
+.glyphicon.glyphicon-send.send-message {
+	color: #FFF; 
+}

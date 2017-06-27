@@ -67,38 +67,50 @@
 		</div>
 		
 		<br>
-		
+
+		{% if messages %}
+
+		{% for message in messages %}
+			<br>
+			<div class="alert alert-success alert-dismissable" id="successful-post">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  <strong>{{ message|safe }}</strong>
+			</div>
+		{% endfor %}
+
+        {% else %}
 		<div id="email-form-container">
 			<h1 id="form-msg" class="text-center"><span class="glyphicon glyphicon-envelope"></span> If you'd prefer to email us, please fill out this form.</h1>
 			<br>
 			
 			<div class="email-form">
-				<form action="" class="text-center">
+				<form action="{% url 'valley_green_landscape:send_email' %}" class="text-center" method="post">
+					{% csrf_token %}
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Full Name</label>
-							<input type="text" placeholder="Add Full Name" class="form-control input-lg" required>
+							<input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" required>
 						</div>
 					</div>
 					
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Email</label>
-							<input type="email" placeholder="Add Email" class="form-control input-lg" required>
+							<input type="email" placeholder="Add Email" class="form-control input-lg" name="user-email" required>
 						</div>	
 					</div>
 					
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Subject</label>
-							<input type="text" placeholder="e.g. Tree Trimming Estimate, Weekly Yard Maintenance, etc." class="form-control input-lg" required>
+							<input type="text" placeholder="e.g. Tree Trimming Estimate, Weekly Yard Maintenance, etc." class="form-control input-lg" name="user-subject" required>
 						</div>	
 					</div>
 					
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Message</label>
-							<textarea placeholder="Add Message" class="form-control input-lg" required></textarea>
+							<textarea placeholder="Add Message" class="form-control input-lg" name="user-message" required></textarea>
 						</div>	
 					</div>
 					
@@ -111,6 +123,7 @@
 				</form>
 			</div>
 		</div>
+		{% endif %}
     </div>
 
 

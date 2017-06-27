@@ -10,6 +10,7 @@
 	
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
     
     <title>Page Title</title>
 </head>
@@ -43,21 +44,87 @@
     </nav>
     
 	<div class="container">
-		<br>
+        <br>
+        <div class="row text-center">
+            <h1 class="overall-score">Overall Rating<br>{{ overall_score_star|safe }}
+                {{ overall_score }} out of 5
+            </h1>
+        </div><br>
 
         <div class="row text-center">
-            <form action="#" method="post">
-                {% csrf_token %}
-
-                <button type="submit" class="btn btn-primary btn-lg add-review-btn" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    Add a review
-                </button>
-            </form>
-
+            <a class="btn btn-success btn-lg add-review-btn" data-popup-open="popup-1" href="#" id="open-review-dialog">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Add a review
+            </a>
         </div>
 
-		
+        {% if messages %}
+            {% for message in messages %}
+                <br>
+                <div class="alert alert-success alert-dismissable" id="successful-post">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Thank you for your review {{ message }}!</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="popup" data-popup="popup-1">
+            <div class="popup-inner">
+                <h1 class="text-center">Add a Review</h1>
+                <hr class="custom-hr"><br>
+
+                <form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Photo URL</label>
+                                <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Review Text</label>
+                                <textarea placeholder="Add a review" class="form-control input-lg" name="review-text" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Overall Rating (1 is low and 5 is high)</label><br>
+                                <input type="number" name="review-score" min="1" max="5" value="5" class="form-control" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+
+                        <a data-popup-close="popup-1" href="#" class="btn btn-danger btn-lg cancel-btn" id="cancel-review-btn">Close</a>
+                        <button type="submit" class="btn btn-success btn-lg add-review-btn" aria-label="Left Align" id="submit-review-btn">
+                            Submit Review
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
 		<br><br>
 
         {% if reviews %}
@@ -86,69 +153,24 @@
                     </div>
 
                     <div class="row">
+                        <div class="review-post-date col-md-3 review-star-score">
+                            {{ review.star_score|safe}} {{ review.score }} out of 5
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="review-post-date col-md-3">
                             <p>Posted on: {{ review.posted_at }}</p>
                         </div>
                     </div>
 
 
-                </div>
+                </div><br>
             {% endfor %}
-
-		<!--<div class="review-container">-->
-			<!--<div class="col-xs-4 col-md-2">-->
-				<!--<a href="#" class="thumbnail">-->
-				  <!--<img src="{% static 'valley_green_landscape/img/pic.jpg' %}"" alt="...">-->
-				<!--</a>-->
-				<!--<div class="caption text-center">-->
-					<!--<h4><b>Rudy Huezo</b></h4>-->
-				<!--</div>-->
-			<!--</div>-->
-			 <!---->
-			<!--<div class="reviewer-comment-text text-center col-md-10">-->
-				<!---->
-				<!--<i class="fa fa-quote-left fa-2x fa-pull-left" aria-hidden="true"></i>-->
-				<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eaque quo consequuntur dolores, libero maiores, corporis magnam fugiat.-->
-				<!--Now this works very well-->
-				<!--Lorem ipsum dolor sit amet, consectetur adipisicing-->
-				<!--<i class="fa fa-quote-right fa-2x fa-pull-right" aria-hidden="true"></i>-->
-			<!--</div>-->
-			<!---->
-			<!--<div class="review-post-date col-md-3">-->
-				<!--<p>Posted on: 6/21/2017 12:30AM</p>-->
-			<!--</div>-->
-			<!---->
-		<!--</div>-->
-		<!---->
-		<!--<div class="review-container even">-->
-			<!---->
-			<!--<div class="col-xs-4 col-md-2">-->
-				<!--<a href="#" class="thumbnail">-->
-				  <!--<img src="{% static 'valley_green_landscape/img/bun_hair.jpg' %}"" alt="...">-->
-				<!--</a>-->
-				<!--<div class="caption text-center">-->
-					<!--<h4><b>Bunny Herath</b></h4>-->
-				<!--</div>-->
-			<!--</div>-->
-			<!---->
-			<!--<div class="reviewer-comment-text text-center col-md-10">-->
-				<!---->
-				<!--<i class="fa fa-quote-left fa-2x fa-pull-left" aria-hidden="true"></i>-->
-				<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eaque quo consequuntur dolores, libero maiores, corporis magnam fugiat.-->
-				<!--Now this works very well-->
-				<!--Lorem ipsum dolor sit amet, consectetur adipisicing-->
-				<!--<i class="fa fa-quote-right fa-2x fa-pull-right" aria-hidden="true"></i>-->
-			<!--</div>-->
-			<!---->
-			<!--<div class="review-post-date col-md-3">-->
-				<!--<p>Posted on: 6/22/2017 3:30PM</p>-->
-			<!--</div>-->
-			<!---->
-		<!--</div>-->
         {% else %}
 
         <div class="jumbotron text-center">
-        <h1>There are currently no reviews available</h1>
+            <h1>There are currently no reviews available.<br>You can add one by clicking on <b>Add a Review</b></h1>
         </div>
         {% endif %}
 	</div>

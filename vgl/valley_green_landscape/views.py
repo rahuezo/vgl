@@ -1,7 +1,11 @@
-from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
-from .forms import SignUpForm
+from django.core.mail import EmailMessage
+from django.shortcuts import render
 from models import Review
+
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.contrib import messages
+from math import floor
 
 
 def index(request):
@@ -18,11 +22,16 @@ def gallery(request):
 
 def reviews(request):
 
-    all_reviews = Review.objects.all()
-    all_reviews.reverse()
+    all_reviews = Review.objects.all().order_by('-pk')
+
+    overall_score = sum([review.score for review in all_reviews]) / float(len(all_reviews))
+    overall_score_star = int_to_star(floor(overall_score))
 
     context = {
+        'overall_score_star': overall_score_star,
+        'overall_score': round(overall_score, 1),
         'reviews': all_reviews,
+
     }
 
     return render(request, 'valley_green_landscape/reviews.html', context)
@@ -40,16 +49,83 @@ def about(request):
     return render(request, 'valley_green_landscape/about.html', context)
 
 
-def signup(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user, template_name='registration/login.html')
-            return redirect('valley_green_landscape:reviews')
-    else:
-        form = SignUpForm()
-    return render(request, 'valley_green_landscape/signup.html', {'form': form})
+def send_email(request):
+    if request.method == "POST":
+        user_name = request.POST.get('user-name')
+        user_email = request.POST.get('user-email')
+        user_subject = request.POST.get('user-subject')
+        user_message = request.POST.get('user-message')
+
+        email = EmailMessage("{0} - {1}".format(user_name.upper(), user_subject.capitalize()), user_message,
+                             to=[user_email])
+
+        email.send()
+
+        messages.add_message(request, messages.INFO, "Thank you for your email {0}!<br>\
+        We will get in touch with you within 24 hours.".format(user_name))
+
+        return HttpResponseRedirect(reverse('valley_green_landscape:contact'))
+
+
+def add_review(request):
+    user_name = request.POST.get('user-name')
+    photo_url = request.POST.get('profile-img')
+    review_text = request.POST.get('review-text')
+    score = request.POST.get('review-score')
+
+    new_review = Review() #user=user_name, photo=photo_url, text=review_text)
+
+    new_review.user = user_name
+
+    if len(photo_url) > 0:
+        new_review.photo = photo_url
+
+    new_review.text = review_text
+    new_review.score = score
+    new_review.star_score = int_to_star(int(score))
+
+    new_review.save()
+
+    messages.add_message(request, messages.INFO, user_name)
+
+    return HttpResponseRedirect(reverse('valley_green_landscape:reviews'))
+
+
+def int_to_star(score):
+    html_tag = ""
+
+    filled_star = '<span class="glyphicon glyphicon-star" aria-hidden="true" ></span>'
+    empty_star = '<span class="glyphicon glyphicon-star-empty" aria-hidden="true" ></span>'
+
+    if score == 1:
+        filled_no = 1
+        empty_no = 4
+
+        html_tag += filled_star * filled_no
+        html_tag += empty_star * empty_no
+    elif score == 2:
+        filled_no = 2
+        empty_no = 3
+
+        html_tag += filled_star * filled_no
+        html_tag += empty_star * empty_no
+    elif score == 3:
+        filled_no = 3
+        empty_no = 2
+
+        html_tag += filled_star * filled_no
+        html_tag += empty_star * empty_no
+    elif score == 4:
+        filled_no = 4
+        empty_no = 1
+
+        html_tag += filled_star * filled_no
+        html_tag += empty_star * empty_no
+    elif score == 5:
+        filled_no = 5
+        empty_no = 0
+
+        html_tag += filled_star * filled_no
+        html_tag += empty_star * empty_no
+
+    return html_tag

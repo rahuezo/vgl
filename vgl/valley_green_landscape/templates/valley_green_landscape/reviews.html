@@ -6,7 +6,8 @@
     
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'valley_green_landscape/css/font-awesome.min.css' %}">
+	
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
     
@@ -14,8 +15,7 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -34,13 +34,123 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
               <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
-              <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+              <li><a href="{% url 'valley_green_landscape:reviews' %}" class="current">Reviews</a></li>
               <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
               <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>              
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
-      </nav>
+    </nav>
+    
+	<div class="container">
+		<br>
+
+        <div class="row text-center">
+            <form action="#" method="post">
+                {% csrf_token %}
+
+                <button type="submit" class="btn btn-primary btn-lg add-review-btn" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    Add a review
+                </button>
+            </form>
+
+        </div>
+
+		
+		<br><br>
+
+        {% if reviews %}
+            {% for review in reviews %}
+
+                <div class="review-container {% if forloop.counter0|divisibleby:2 %}even{% endif %}">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2">
+                            <div class="thumbnail">
+                                <img src="{{ review.photo }}" alt="{{ review.user }}" class="reviewer-profile-img img-thumbnail">
+                                <div class="caption text-center">
+                                    <h4><b>{{ review.user }}</b></h4>
+                                </div>
+                            </div>
+
+
+                            <!--</a>-->
+
+                        </div>
+
+                        <div class="reviewer-comment-text text-center col-md-10">
+                            <i class="fa fa-quote-left fa-2x fa-pull-left" aria-hidden="true"></i>
+                             {{ review.text }}
+                            <i class="fa fa-quote-right fa-2x fa-pull-right" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="review-post-date col-md-3">
+                            <p>Posted on: {{ review.posted_at }}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            {% endfor %}
+
+		<!--<div class="review-container">-->
+			<!--<div class="col-xs-4 col-md-2">-->
+				<!--<a href="#" class="thumbnail">-->
+				  <!--<img src="{% static 'valley_green_landscape/img/pic.jpg' %}"" alt="...">-->
+				<!--</a>-->
+				<!--<div class="caption text-center">-->
+					<!--<h4><b>Rudy Huezo</b></h4>-->
+				<!--</div>-->
+			<!--</div>-->
+			 <!---->
+			<!--<div class="reviewer-comment-text text-center col-md-10">-->
+				<!---->
+				<!--<i class="fa fa-quote-left fa-2x fa-pull-left" aria-hidden="true"></i>-->
+				<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eaque quo consequuntur dolores, libero maiores, corporis magnam fugiat.-->
+				<!--Now this works very well-->
+				<!--Lorem ipsum dolor sit amet, consectetur adipisicing-->
+				<!--<i class="fa fa-quote-right fa-2x fa-pull-right" aria-hidden="true"></i>-->
+			<!--</div>-->
+			<!---->
+			<!--<div class="review-post-date col-md-3">-->
+				<!--<p>Posted on: 6/21/2017 12:30AM</p>-->
+			<!--</div>-->
+			<!---->
+		<!--</div>-->
+		<!---->
+		<!--<div class="review-container even">-->
+			<!---->
+			<!--<div class="col-xs-4 col-md-2">-->
+				<!--<a href="#" class="thumbnail">-->
+				  <!--<img src="{% static 'valley_green_landscape/img/bun_hair.jpg' %}"" alt="...">-->
+				<!--</a>-->
+				<!--<div class="caption text-center">-->
+					<!--<h4><b>Bunny Herath</b></h4>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!---->
+			<!--<div class="reviewer-comment-text text-center col-md-10">-->
+				<!---->
+				<!--<i class="fa fa-quote-left fa-2x fa-pull-left" aria-hidden="true"></i>-->
+				<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eaque quo consequuntur dolores, libero maiores, corporis magnam fugiat.-->
+				<!--Now this works very well-->
+				<!--Lorem ipsum dolor sit amet, consectetur adipisicing-->
+				<!--<i class="fa fa-quote-right fa-2x fa-pull-right" aria-hidden="true"></i>-->
+			<!--</div>-->
+			<!---->
+			<!--<div class="review-post-date col-md-3">-->
+				<!--<p>Posted on: 6/22/2017 3:30PM</p>-->
+			<!--</div>-->
+			<!---->
+		<!--</div>-->
+        {% else %}
+
+        <div class="jumbotron text-center">
+        <h1>There are currently no reviews available</h1>
+        </div>
+        {% endif %}
 	</div>
     
 

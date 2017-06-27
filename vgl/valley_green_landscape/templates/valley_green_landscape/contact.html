@@ -9,115 +9,109 @@
     
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
+	<script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
     
     <title>Page Title</title>
 </head>
 
-<body>
+<body>	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	   <div class="container-fluid">
+		 <!-- Brand and toggle get grouped for better mobile display -->
+		 <div class="navbar-header">
+		   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			 <span class="sr-only">Toggle navigation</span>
+			 <span class="icon-bar"></span>
+			 <span class="icon-bar"></span>
+			 <span class="icon-bar"></span>
+		   </button>
+		   <a class="navbar-brand" href="#">Valley Green Landscape</a>
+		 </div>
+	 
+		 <!-- Collect the nav links, forms, and other content for toggling -->
+		 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		   
+		   <ul class="nav navbar-nav navbar-right">
+			 <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+			 <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+			 <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+			 <li><a href="{% url 'valley_green_landscape:contact' %}" class="current" onmouseover="showContact();">Contact</a></li>
+			 <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>              
+		   </ul>
+		 </div><!-- /.navbar-collapse -->
+	   </div><!-- /.container-fluid -->
+	</nav>
 	
-	
-	 <nav class="navbar navbar-inverse navbar-fixed-top">
-       <div class="container-fluid">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-             <span class="sr-only">Toggle navigation</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="#">Valley Green Landscape</a>
-         </div>
-     
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           
-           <ul class="nav navbar-nav navbar-right">
-             <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
-             <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
-             <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
-             <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
-             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>              
-           </ul>
-         </div><!-- /.navbar-collapse -->
-       </div><!-- /.container-fluid -->
-    </nav>
-	<div class="jumbotron text-center contact-info center">
-			<h1>Contact Us</h1>
-			
-			<hr class="custom-hr">
-			
-			<div id="contact-info">
-				<div class="row">
-					
-					<div id="address">
-						<span class="glyphicon glyphicon-home"></span>
-						14814 Aztec St. Sylmar, CA 91342
-					</div>		
-					
-				</div>
+	<div id="contact-wrapper">
+		<div class="jumbotron text-center contact-info center">
+				<h1>Contact Us</h1>
 				
-				<div class="row">
-					<div id="phone">
-						<span class="glyphicon glyphicon-phone-alt"></span>
-						(818) 362-1668	
-					</div>	
-				</div>
+				<hr class="custom-hr">
 				
-				<div class="row">
-					<div id="email">
-						<span class="glyphicon glyphicon-envelope"></span>
-						vgl@gmail.com
-					</div>	
+				<br>
+				
+				<div id="contact-info">
+					<div class="row">					
+						<div id="address">
+							<span class="glyphicon glyphicon-home"></span>
+							<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline">Aztec St. Sylmar, CA 91342</a>				
+					</div>
+					
+					<div class="row">
+						<div id="phone">
+							<span class="glyphicon glyphicon-phone-alt"></span>
+							<a href="tel:8183621668">(818) 362-1668</a>
+						</div>
+					</div>			
 				</div>
-			</div>
 		</div>
-	
-	<div id="email-form-container">
-		<h1 id="form-msg" class="text-center">If you'd prefer to email us, please fill out this form.</h1>
+		
 		<br>
 		
-		<div class="email-form">
-			<form action="" class="text-center">
-				<div class="row">
-					<div class="form-group text-left">
-						<label>Full Name</label>
-						<input type="text" placeholder="Add Full Name" class="form-control" required>
+		<div id="email-form-container">
+			<h1 id="form-msg" class="text-center"><span class="glyphicon glyphicon-envelope"></span> If you'd prefer to email us, please fill out this form.</h1>
+			<br>
+			
+			<div class="email-form">
+				<form action="" class="text-center">
+					<div class="row">
+						<div class="form-group text-left">
+							<label>Full Name</label>
+							<input type="text" placeholder="Add Full Name" class="form-control input-lg" required>
+						</div>
 					</div>
-				</div>
-				
-				<div class="row">
-					<div class="form-group text-left">
-						<label>Email</label>
-						<input type="email" placeholder="Add Email" class="form-control" required>
-					</div>	
-				</div>
-				
-				<div class="row">
-					<div class="form-group text-left">
-						<label>Subject</label>
-						<input type="text" placeholder="e.g. Tree Trimming Estimate, Weekly Yard Maintenance, etc." class="form-control" required>
-					</div>	
-				</div>
-				
-				<div class="row">
-					<div class="form-group text-left">
-						<label>Message</label>
-						<textarea placeholder="Add Message" class="form-control" required></textarea>
-					</div>	
-				</div>
-				
 					
-				<div class="row text-center">
-					<button type="submit" class="btn btn-primary btn-lg">
-						Send
-						<span class="glyphicon glyphicon-send  send-message"></span>
-					</button>
-				</div>
-			</form>
+					<div class="row">
+						<div class="form-group text-left">
+							<label>Email</label>
+							<input type="email" placeholder="Add Email" class="form-control input-lg" required>
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="form-group text-left">
+							<label>Subject</label>
+							<input type="text" placeholder="e.g. Tree Trimming Estimate, Weekly Yard Maintenance, etc." class="form-control input-lg" required>
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="form-group text-left">
+							<label>Message</label>
+							<textarea placeholder="Add Message" class="form-control input-lg" required></textarea>
+						</div>	
+					</div>
+					
+						
+					<div class="row text-center">
+						<button type="submit" class="btn btn-primary btn-lg send-btn">
+							Send
+						</button>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-    
+    </div>
 
 
 

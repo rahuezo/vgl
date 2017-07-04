@@ -6,9 +6,13 @@
     
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/jquery.bxslider.css' %}">
+
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/jquery.bxslider.min.js' %}"></script>
+
     
     <title>Page Title</title>
 </head>
@@ -43,13 +47,27 @@
     </nav>
     
     <div class="container"> 
-      <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-      </div>
+
+        <ul class="bxslider">
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/1.jpg' %}" alt="" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eaque est officiis placeat quo recusandae repellat voluptatum! Ab consectetur, dolorem doloribus enim expedita labore laboriosam, magni molestiae quo quos rerum!"></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/2.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/3.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/4.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/5.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/6.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/7.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/8.jpg' %}" alt=""></li>
+            <li><img src="{% static 'valley_green_landscape/img/home_slide/9.jpg' %}" alt=""></li>
+        </ul>
+
 	</div> <!--container-->
-    
+	<br><br><br><br>
+	
+	<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
+    </div>
 
 
 

@@ -1,10 +1,10 @@
 function showContact() {
-    $('#contact-hover').fadeIn(50); 
+    $('#contact-hover').fadeIn(50);
 }
 
 $(function(){
-    console.log("Ready"); 
-    $('#contact-wrapper').fadeIn(500);     
+    console.log("Ready");
+    $('#contact-wrapper').fadeIn(500);
 });
 
 $(document).ready(function() {
@@ -20,7 +20,33 @@ $(document).ready(function() {
         $('#review-dialog-box').hide();
     });
 
-//    $('#successful-post').fadeOut(4000);
+
+    $('.bxslider').bxSlider({
+      adaptiveHeight: true,
+      mode: 'fade',
+      captions: true,
+      ticker: true,
+    });
+  
+    $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+
 });
 
 $(function() {

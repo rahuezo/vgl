@@ -18,32 +18,51 @@
 </head>
 
 <body>	
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	   <div class="container-fluid">
-		 <!-- Brand and toggle get grouped for better mobile display -->
-		 <div class="navbar-header">
-		   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			 <span class="sr-only">Toggle navigation</span>
-			 <span class="icon-bar"></span>
-			 <span class="icon-bar"></span>
-			 <span class="icon-bar"></span>
-		   </button>
-		   <a class="navbar-brand" href="#">Valley Green Landscape</a>
-		 </div>
-	 
-		 <!-- Collect the nav links, forms, and other content for toggling -->
-		 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		   
-		   <ul class="nav navbar-nav navbar-right">
-			 <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
-			 <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
-			 <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
-			 <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
-			 <li><a href="{% url 'valley_green_landscape:about' %}" class="current">About Us</a></li>              
-		   </ul>
-		 </div><!-- /.navbar-collapse -->
-	   </div><!-- /.container-fluid -->
-	</nav>
+	<!--TOP OF WEBSITE-->
+	
+	<div class="jumbotron">
+		<div class="row">
+			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">	
+			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
+			<div class="contact-info-top">
+				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
+				<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a>
+				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
+				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
+				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
+			</div>	
+		</div>
+		
+	</div>
+    
+    <nav class="navbar navbar-inverse" id="navbar">
+       <div class="container-fluid">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" id="page-brand-onscroll" href="#">Valley Green Landscape</a>
+         </div>
+     
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           
+           <ul class="nav navbar-nav navbar-center" id="top-links">
+             <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+             <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+             <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+             <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
+             <li><a href="{% url 'valley_green_landscape:about' %}" class="current">About Us</a></li>              
+           </ul>
+         </div><!-- /.navbar-collapse -->
+       </div><!-- /.container-fluid -->
+    </nav><br>
+	
+	<!--END TOP OF WEBSITE-->
 	
 	<div class="container">
 		<div class="jumbotron text-center contact-info center">
@@ -99,32 +118,32 @@
 		
     </div><br><br><br><br>
 	
-	<div id="footer">
+	<!--<div id="footer">
       <div class="container">
 		
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-2 col-xs-2">
 				<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="footer-logo">	
 			</div>
 			
 			<div class="social-media">
-				<div class="col-md-3 contact-col">
+				<div class="col-md-3 col-xs-3 contact-col">
 					<h3 class="footer-title">Address</h3>
 					<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline">Aztec St. Sylmar, CA 91342</a>
 				</div>
 				
-				<div class="col-md-2 contact-col">
+				<div class="col-md-2 col-xs-2 contact-col">
 					<h3 class="footer-title">Phone</h3>
 					<a href="tel:8183621668">(818) 362-1668</a>
 				</div>
 				
-                <div class="col-md-2 contact-col">
+                <div class="col-md-2 col-xs-2 contact-col">
 					<h3 class="footer-title">Email</h3>
 					<a href="mailto:vgl@gmail.com">vgl@gmail.com</a>
 					
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-md-3 col-xs-3">
 					<h3 class="footer-title">Also find us on</h3>
 					<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:36px"></i></a>
 					<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:36px"></i></a>
@@ -140,7 +159,7 @@
 		</div>
         
       </div>
-    </div>
+    </div>-->
 
 
 

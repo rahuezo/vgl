@@ -8,32 +8,46 @@ $(function(){
 });
 
 $(document).ready(function() {
-    $('#review-dialog-box').hide();
-
-    $('#open-review-dialog').click(function(){
-        $('#overlay-back').fadeIn(100);
-        $('#review-dialog-box').show();
+    //$('#review-dialog-box').hide();
+    //
+    //$('#open-review-dialog').click(function(){
+    //    $('#overlay-back').fadeIn(100);
+    //    $('#review-dialog-box').show();
+    //});
+    //
+    //$('#cancel-review-btn').click(function(){
+    //    $('#overlay-back').fadeOut(100);
+    //    $('#review-dialog-box').hide();
+    //});
+    //
+    //
+    
+    $(document).scroll(function () {
+      console.log($(window).scrollTop())
+      if ($(window).scrollTop() > 88) { 
+        $('#navbar').addClass('navbar-fixed-top');
+        $('#top-links').addClass('navbar-right');
+        $('#page-brand-onscroll').show(); 
+      }
+      if ($(window).scrollTop() < 88) {
+        $('#navbar').removeClass('navbar-fixed-top');
+        $('#top-links').removeClass('navbar-right');
+        $('#page-brand-onscroll').hide(); 
+      }
     });
-
-    $('#cancel-review-btn').click(function(){
-        $('#overlay-back').fadeOut(100);
-        $('#review-dialog-box').hide();
-    });
-
-
+    
     $('.bxslider').bxSlider({
       adaptiveHeight: true,
       mode: 'fade',
-      captions: true,
       ticker: true,
     });
   
-    $(window).scroll(function () {
-            if ($(this).scrollTop() > 50) {
-                $('#back-to-top').fadeIn();
-            } else {
-                $('#back-to-top').fadeOut();
-            }
+    $(document).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
         });
         // scroll body to 0px on click
         $('#back-to-top').click(function () {

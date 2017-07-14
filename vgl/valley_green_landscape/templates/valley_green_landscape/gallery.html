@@ -10,6 +10,7 @@
     
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
+	<script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
     
     <title>Page Title</title>
 </head>
@@ -61,12 +62,67 @@
 	
 	<!--END TOP OF WEBSITE-->
     
-	<div class="container">
-        <div class="review-bar">
-			<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-			Hello
+	<div class="container first-gallery-element">
+		<div id="image-catetories" class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				
+				{% for badge in badges %}
+					{{ badge|safe }}
+				{% endfor %}
+			</div>
+		</div><br>
+		
+        <div class="gallery-wrapper">
+			<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8 main-image" id="main-img-holder">
+				<img src="{% static 'valley_green_landscape/img/pic.jpg' %}" alt="">
+			</div>
+			
+			<div class="col-lg-4 col-md-4 col-sm-4 text-center">
+				<h1 class="main-title gallery-category">Image Category</h1>
+				
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi tenetur architecto eius corrupti minus similique voluptatibus consectetur voluptas adipisci, vel, corporis iure quasi dolore eveniet commodi rerum ea est magnam obcaecati animi. Tempora
+                officiis odio laudantium omnis excepturi distinctio mollitia nihil dolor labore, magnam assumenda debitis nesciunt dolore reiciendis nemo possimus, vitae minima vero pariatur. Quidem magni velit, numquam nemo aliquid nostrum nesciunt vitae eveniet atque
+                impedit eaque, incidunt, a! Eveniet laboriosam, quaerat deserunt fugit, velit veritatis rerum tempora dignissimos praesentium sapiente officiis sed mollitia vitae in rem! Porro quidem consequatur, quis labore voluptates at possimus modi magni reprehenderit,
+                necessitatibus nulla eum libero omnis hic laborum perspiciatis, quasi nihil ullam impedit provident reiciendis, facilis! Sint natus hic dolor quo eligendi!</p>
+			</div>
+			</div> <br>
+			
+			<div class="row">
+				   
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/bun_hair.jpg' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/bun_hair.jpg' %}" alt=""></a>
+					</div>					
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/bg.png' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/bg.png' %}" alt=""></a>	
+					</div>
+					
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/pic.jpg' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/pic.jpg' %}" alt=""></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/2.jpg' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/2.jpg' %}" alt=""></a>
+					</div>
+				</div>
+				
+			</div>
+			
 		</div>
-	</div><br><br><br><br>
+		
+		<a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+	</div>
+		
+		<br><br><br><br>
 	
 	<!--<div id="footer">
       <div class="container">

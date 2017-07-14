@@ -64,17 +64,22 @@
     
 	<div class="container">
         <br>
-        <div class="row text-center">
-            <h1 class="overall-score">Overall Rating<br>{{ overall_score_star|safe }}
+        <div class="row text-center first-gallery-element">
+            <h2 class="overall-score">Overall Rating<br>{{ overall_score_star|safe }}
                 {{ overall_score }} out of 5
-            </h1>
+            </h2>
         </div><br>
 
         <div class="row text-center">
-            <a class="btn btn-success btn-lg add-review-btn" data-popup-open="popup-1" href="#" id="open-review-dialog">
-                <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
-                Add a review
-            </a>
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary btn-lg submit-btn" data-toggle="modal" data-target="#myModal">
+			  Add a Review
+			</button>
+			
+            <!--<a class="btn btn-success btn-lg submit-btn" data-toggle="modal" data-target="#myModal" href="#" id="open-review-dialog">-->
+            <!--    <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
+            <!--    Add a review-->
+            <!--</a>-->
         </div>
 
         {% if messages %}
@@ -86,7 +91,73 @@
                 </div>
             {% endfor %}
         {% endif %}
+		
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header text-center">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<!--<h4 class="modal-title" id="myModalLabel">Add a Review</h4>-->
+				<h1 class="main-title">
+					Add a Review
+				</h1>
+			  </div>
+			  <div class="modal-body">
+				<form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" required>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Photo URL</label>
+                                <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Review Text</label>
+                                <textarea placeholder="Add a review" class="form-control input-lg" name="review-text" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label>Overall Rating</label><br>
+                                <input type="number" name="review-score" min="1" max="5" value="5" class="form-control" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				
+				<button type="submit" class="btn btn-success add-review-btn" aria-label="Left Align" id="submit-review-btn">
+                            Submit Review
+                </button>
+			  </div>
+			  
+			  </form>
+			</div>
+		  </div>
+		</div>
+		
         <div class="popup" data-popup="popup-1">
             <div class="popup-inner">
                 <h1 class="text-center">Add a Review</h1>
@@ -144,8 +215,10 @@
             </div>
         </div>
 
-		<br><br>
-
+		<br>
+		
+		<hr>
+		
         {% if reviews %}
             {% for review in reviews %}
 
@@ -165,9 +238,9 @@
                         </div>
 
                         <div class="reviewer-comment-text text-center col-md-10">
-                            <i class="fa fa-quote-left fa-2x fa-pull-left" aria-hidden="true"></i>
+                            <i class="fa fa-quote-left fa-2x fa-pull-left quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
                              {{ review.text }}
-                            <i class="fa fa-quote-right fa-2x fa-pull-right" aria-hidden="true"></i>
+                            <i class="fa fa-quote-right fa-2x fa-pull-right quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
                         </div>
                     </div>
 
@@ -185,6 +258,8 @@
 
 
                 </div><br>
+				
+				<!--<hr>-->
             {% endfor %}
         {% else %}
 
@@ -192,6 +267,7 @@
             <h1>There are currently no reviews available.<br>You can add one by clicking on <b>Add a Review</b></h1>
         </div>
         {% endif %}
+		<a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</div>
 	<br><br><br><br>
 	

@@ -7,46 +7,37 @@ $(function(){
     $('#contact-wrapper').fadeIn(500);
 });
 
+function view_image(element) {
+  $('#main-img-holder').html('<img src="' + element + '">'); 
+}
+
+function set_gallery_category(text) {
+  $('.gallery-category').text(text); 
+}
+
 $(document).ready(function() {
-    //$('#review-dialog-box').hide();
-    //
-    //$('#open-review-dialog').click(function(){
-    //    $('#overlay-back').fadeIn(100);
-    //    $('#review-dialog-box').show();
-    //});
-    //
-    //$('#cancel-review-btn').click(function(){
-    //    $('#overlay-back').fadeOut(100);
-    //    $('#review-dialog-box').hide();
-    //});
-    //
-    //
     
     $(document).scroll(function () {
-      console.log($(window).scrollTop())
+      console.log($(window).scrollTop());
       if ($(window).scrollTop() > 88) { 
         $('#navbar').addClass('navbar-fixed-top');
         $('#top-links').addClass('navbar-right');
-        $('#page-brand-onscroll').show(); 
+        $('#page-brand-onscroll').show();
+        $('.first-gallery-element').addClass('scroll-padding');
       }
       if ($(window).scrollTop() < 88) {
         $('#navbar').removeClass('navbar-fixed-top');
         $('#top-links').removeClass('navbar-right');
-        $('#page-brand-onscroll').hide(); 
+        $('#page-brand-onscroll').hide();
+        $('.first-gallery-element').removeClass('scroll-padding');
       }
-    });
-    
-    $('.bxslider').bxSlider({
-      adaptiveHeight: true,
-      mode: 'fade',
-      ticker: true,
-    });
-  
-    $(document).scroll(function () {
-        if ($(this).scrollTop() > 50) {
+      
+      if ($(this).scrollTop() > 50) {
             $('#back-to-top').fadeIn();
+            console.log("show top"); 
         } else {
             $('#back-to-top').fadeOut();
+            console.log("hide top"); 
         }
         });
         // scroll body to 0px on click
@@ -59,9 +50,8 @@ $(document).ready(function() {
         });
         
         $('#back-to-top').tooltip('show');
-
-
-});
+    });
+    
 
 $(function() {
     //----- OPEN

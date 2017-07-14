@@ -23,7 +23,7 @@
 			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">	
 			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
 			<div class="contact-info-top">
-				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
+				Call Us: <a href="tel:8183621668">(818) 362-1668</a><br><br>
 				<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a>
 				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
 				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
@@ -58,28 +58,27 @@
            </ul>
          </div><!-- /.navbar-collapse -->
        </div><!-- /.container-fluid -->
-    </nav><br>
+    </nav>
 	
 	<!--END TOP OF WEBSITE-->
 	
-	<div id="contact-wrapper">
+	<div id="contact-wrapper" class="container first-gallery-element">
 		<div class="jumbotron text-center contact-info center">
-				<h1>Contact Us</h1>
+				<h1 class='main-title'>Contact Us</h1>
 				
-				<hr class="custom-hr">
+				<hr>
 				
 				<br>
-				
+		
 				<div id="contact-info">
-					<div class="row">					
+					<div class="row">				
 						<div id="address">
-							<span class="glyphicon glyphicon-home"></span>
-							<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline">Aztec St. Sylmar, CA 91342</a>				
-					</div>
-					
+							<i class="fa fa-map-marker" style="font-size:30px"></i>
+							<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline">Aztec St. Sylmar, CA 91342</a>
+		
 					<div class="row">
 						<div id="phone">
-							<span class="glyphicon glyphicon-phone-alt"></span>
+							<i class="fa fa-phone" aria-hidden="true"  style="font-size:30px"></i>
 							<a href="tel:8183621668">(818) 362-1668</a>
 						</div>
 					</div>			
@@ -98,9 +97,10 @@
 			</div>
 		{% endfor %}
 
-        {% else %}
+        {% endif %}
+		
 		<div id="email-form-container">
-			<h1 id="form-msg" class="text-center"><span class="glyphicon glyphicon-envelope"></span> If you'd prefer to email us, please fill out this form.</h1>
+			<h1 id="form-msg" class="text-center">If you'd prefer to email us, please fill out this form.</h1>
 			<br>
 			
 			<div class="email-form">
@@ -108,42 +108,70 @@
 					{% csrf_token %}
 					<div class="row">
 						<div class="form-group text-left">
-							<label>Full Name</label>
-							<input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" required>
+							<label>Full Name *</label>
+							<input type="text" placeholder="Full Name" class="form-control input-lg" name="user-name" required>
 						</div>
 					</div>
 					
 					<div class="row">
 						<div class="form-group text-left">
-							<label>Email</label>
-							<input type="email" placeholder="Add Email" class="form-control input-lg" name="user-email" required>
+							<label>Email *</label>
+							<input type="email" placeholder="Email" class="form-control input-lg" name="user-email" required>
 						</div>	
 					</div>
 					
 					<div class="row">
 						<div class="form-group text-left">
-							<label>Subject</label>
+							<label>Address</label>
+							<input type="text" placeholder="Address" class="form-control input-lg" name="address-line">
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="form-group text-left">
+							<label>City</label>
+							<input type="text" placeholder="City" class="form-control input-lg" name="city-line">
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="form-group text-left">
+							<label>State</label>
+							<input type="text" placeholder="State" class="form-control input-lg" name="state-line">
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="form-group text-left">
+							<label>Zip Code *</label>
+							<input type="text" placeholder="Zip Code" class="form-control input-lg" name="zip-line" required>
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="form-group text-left">
+							<label>Subject *</label>
 							<input type="text" placeholder="e.g. Tree Trimming Estimate, Weekly Yard Maintenance, etc." class="form-control input-lg" name="user-subject" required>
 						</div>	
 					</div>
 					
 					<div class="row">
 						<div class="form-group text-left">
-							<label>Message</label>
+							<label>Message *</label>
 							<textarea placeholder="Add Message" class="form-control input-lg" name="user-message" required></textarea>
 						</div>	
 					</div>
 					
 						
 					<div class="row text-center">
-						<button type="submit" class="btn btn-primary btn-lg send-btn">
-							Send
+						<button type="submit" class="btn btn-primary btn-lg submit-btn">
+							Submit
 						</button>
 					</div>
 				</form>
 			</div>
 		</div>
-		{% endif %}
+		<a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </div>
 	<br><br><br><br>
 	

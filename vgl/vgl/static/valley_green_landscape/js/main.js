@@ -7,6 +7,10 @@ $(function(){
     $('#contact-wrapper').fadeIn(500);
 });
 
+function view_image(element) {
+  $('#main-img-holder').html('<img src="' + element + '">'); 
+}
+
 $(document).ready(function() {
     //$('#review-dialog-box').hide();
     //
@@ -22,17 +26,23 @@ $(document).ready(function() {
     //
     //
     
+    //$('.thumbnail-img-btn').click(function() {
+    //  console.log('this was clicked'); 
+    //});
+    
     $(document).scroll(function () {
-      console.log($(window).scrollTop())
+      console.log($(window).scrollTop());
       if ($(window).scrollTop() > 88) { 
         $('#navbar').addClass('navbar-fixed-top');
         $('#top-links').addClass('navbar-right');
-        $('#page-brand-onscroll').show(); 
+        $('#page-brand-onscroll').show();
+        $('.first-gallery-element').addClass('scroll-padding');
       }
       if ($(window).scrollTop() < 88) {
         $('#navbar').removeClass('navbar-fixed-top');
         $('#top-links').removeClass('navbar-right');
-        $('#page-brand-onscroll').hide(); 
+        $('#page-brand-onscroll').hide();
+        $('.first-gallery-element').removeClass('scroll-padding');
       }
     });
     

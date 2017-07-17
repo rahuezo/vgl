@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/jquery.bxslider.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
+
+    <title>Page Title</title>
+</head>
+
+<body>
+	<!--TOP OF WEBSITE-->
+
+	<div class="jumbotron">
+		<div class="row">
+			<a href="{% url 'valley_green_landscape:index' %}"><img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top"></a>
+			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
+			<div class="contact-info-top">
+				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
+				<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a>
+				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
+				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
+				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
+			</div>
+		</div>
+
+	</div>
+
+  <nav class="navbar navbar-inverse" id="navbar">
+     <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" id="page-brand-onscroll" href="{% url 'valley_green_landscape:index' %}">Valley Green Landscape</a>
+       </div>
+
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+         <ul class="nav navbar-nav navbar-center" id="top-links">
+           <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+           <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+           <li><a href="{% url 'valley_green_landscape:gallery' %}" class="current">Services</a></li>
+           <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+           <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
+           <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
+         </ul>
+       </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+  </nav>
+
+	<!--END TOP OF WEBSITE-->
+
+  <div class="container">
+		<div class="jumbotron text-center first-gallery-element">
+			<h1 class="main-title">Services</h1>
+    </div><br><br>
+
+		<hr>
+    <div class="services-sections">
+
+  		<section class="review-container even">
+        <h2>Gardening Service</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eos nemo, odio, ipsa perferendis cum eligendi neque nihil officia nobis, optio repellat quo totam assumenda molestiae! Voluptatem perferendis delectus ipsa dolores illum dolorum numquam recusandae. Vero consequatur unde quaerat ratione labore maxime molestias ipsa et quae, cupiditate, sequi quisquam incidunt voluptate. Maxime facilis, perspiciatis cupiditate a nemo numquam ab explicabo cumque! A tempora, inventore odit deleniti labore laudantium dolore sed veritatis voluptatibus provident fuga itaque voluptate magnam perferendis. Delectus molestiae vel unde velit, error dolorem ipsam dolore pariatur assumenda, quas, fugit enim libero ipsa molestias ut totam incidunt! Quas, facilis!</p>
+
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Sodding and Reseeding</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate reiciendis delectus unde quae placeat tempora nobis quibusdam totam eveniet, consequuntur dolorem ab facere adipisci ad voluptatum asperiores repellendus explicabo ea ullam quia, quam possimus quod quos iste. Itaque unde architecto, iusto ipsa deleniti facilis. Deleniti quod dolor error repellendus, ex! Perspiciatis eveniet quod minima ad cumque accusamus sapiente repellat accusantium!</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Valve Replacement</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eos consectetur, corporis sunt tempora illum ex, velit voluptates magni accusantium amet repellat officia dicta natus veniam mollitia recusandae! Velit beatae porro soluta vitae. Similique labore obcaecati aut itaque pariatur officia, maxime, mollitia numquam quam, corporis voluptatem. Alias perspiciatis enim exercitationem perferendis officia necessitatibus quis id dolorem soluta asperiores deleniti, placeat voluptate, et nesciunt blanditiis inventore illum, est dolores dolorum reprehenderit. Fugit consequuntur ipsum quibusdam illum dolor similique voluptatum, eaque numquam sequi amet maxime, inventore iusto id perferendis quod blanditiis exercitationem temporibus quia, adipisci, accusantium officiis sapiente. Provident cumque neque eum.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Sprinkler Installation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis numquam, qui nihil. Explicabo cum nostrum doloribus repellendus laboriosam blanditiis consequatur officiis quidem, aspernatur tenetur expedita dolorum culpa id deserunt quisquam excepturi aliquam vero pariatur, consequuntur quo quaerat veniam cupiditate. Vel sapiente recusandae error laborum aliquid inventore voluptate, culpa beatae, cumque odit cum eos quidem nesciunt illum incidunt totam sit corrupti nihil ea? Maxime at maiores esse ut quibusdam porro tenetur hic incidunt, tempore officiis nisi aliquid deserunt laborum quasi facilis.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Hardscape Design and Installation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolores tenetur voluptates sequi eligendi aliquid provident optio natus explicabo, aspernatur voluptatem ipsam suscipit eum ipsa, necessitatibus officia, excepturi quia illo architecto vel aperiam? Deserunt earum, magnam. Est enim distinctio ipsam quos tempora, dicta nostrum quae nam atque, recusandae in similique ducimus aliquam. Modi eos doloremque deserunt voluptatem delectus neque dolore labore. Commodi numquam officia eaque omnis veniam dolores doloremque reiciendis.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Synthetic Turf</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto molestiae dignissimos, quis sit exercitationem esse officia doloribus illo repellendus dolorum? Officiis quis nobis iure fuga voluptas laboriosam, nesciunt pariatur dolores optio, repellendus, assumenda nihil nulla architecto. Impedit cupiditate nemo odit, voluptatem, error minus beatae quia. Nisi, rem. Atque numquam vero harum, saepe quia error, tenetur alias architecto similique debitis. Quasi ipsam impedit voluptatibus amet ab. Aliquam neque quam, delectus odio laudantium earum accusantium laborum, corporis quibusdam dolores porro!</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Concrete Curb</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et alias corrupti ex unde aspernatur, magni nam officia, dolorem, ut odio dolores! Id vel, rem, a, quas aut beatae autem sit quod repellat ea eaque officiis explicabo consectetur, odit assumenda temporibus odio fugiat dolores in. Veritatis sunt unde perspiciatis necessitatibus similique quos, fugit? Exercitationem explicabo fugiat ad culpa sint excepturi cumque, labore quae nesciunt facilis hic neque incidunt enim, perspiciatis tempora, asperiores! Earum amet, ad at sunt voluptas magnam excepturi eligendi pariatur voluptatibus maxime, optio accusantium iure nam possimus inventore. Soluta.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Mulch and Gravel Design</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, architecto, laboriosam! Debitis, blanditiis quaerat fugit, officiis recusandae perspiciatis eveniet expedita amet reiciendis pariatur. Optio aperiam animi nihil dolorem error nulla perspiciatis delectus enim. Necessitatibus ducimus dolorem sapiente inventore ut ab nobis qui. Sit, atque expedita porro. Facere voluptates, fugiat fuga. Odit, a veritatis dolorem ratione quod cupiditate nostrum sed obcaecati iusto, excepturi, consectetur dolor! Magni quidem ab enim magnam qui deleniti cumque incidunt cum aliquam facilis cupiditate ad, adipisci delectus aliquid officia perferendis eius suscipit, temporibus totam maxime laborum. Doloribus.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Drip System Installation and Repair</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus non laborum accusamus provident! Soluta nihil quis, aspernatur hic autem voluptates itaque magnam nemo omnis mollitia facere provident sequi reprehenderit, ex minima cupiditate quasi necessitatibus quas delectus ab fugiat rem enim molestiae incidunt odio. Pariatur dolores, repudiandae maxime aperiam ducimus praesentium nostrum dolorum omnis accusantium libero veritatis illum maiores provident molestias assumenda quisquam exercitationem error nobis voluptates ad eaque ex voluptatum amet necessitatibus. Optio deserunt facilis sed et earum rerum similique?</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Tree Trimming</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum iste, explicabo labore temporibus recusandae qui sint? Veritatis sit minus quae necessitatibus maiores vel assumenda quod. Veniam ipsum officiis repellendus enim voluptatum eveniet in expedita, sunt culpa minima. Perspiciatis, officiis.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Palm and Tree Cleanup</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nisi, sit quam unde vero voluptatum ipsum. Facere, dolor, nostrum. Temporibus perspiciatis, ea inventore sit obcaecati eos, facilis modi dolorem soluta error illum, eligendi, non fugit explicabo delectus et aperiam tempore vero harum similique. Consequatur iste reiciendis, mollitia modi unde et quas nemo ducimus recusandae accusantium, corporis, sunt! Explicabo, culpa similique!</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Lots/Hillside Cleaning for Fire Regulation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, possimus, voluptas. Dicta, repellendus. Quis eveniet saepe esse at quae, dicta modi autem nulla reprehenderit, fugit voluptatem! Consectetur asperiores similique, saepe quisquam optio fuga animi laboriosam sunt accusamus expedita culpa harum nemo quibusdam id dolores quas praesentium fugiat recusandae eligendi! Voluptatibus assumenda iure delectus excepturi accusamus tempora. Quo in commodi incidunt nesciunt repellat velit eveniet sequi molestias et, dolorem numquam porro, nihil laudantium quas odio consequuntur delectus minima saepe dicta quae molestiae nobis illo tempora? Ullam, quae, aut! Qui officia quaerat tempore nisi. Quis, nemo necessitatibus. Ipsum consequatur provident deleniti tempora aut, doloribus at illum ad sit harum animi dolorum, optio maiores! Animi doloribus itaque omnis est suscipit, quod asperiores amet.</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Stump Grinding</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem excepturi culpa blanditiis voluptatum velit. Iusto voluptatem neque tempore impedit ex, quaerat doloribus iste, vitae, sequi ipsum temporibus, magnam natus necessitatibus inventore. Saepe consequuntur, assumenda mollitia, dolor omnis laboriosam sit, eius, aliquid repellat atque aperiam consectetur fugiat. Laudantium doloremque voluptate impedit, reprehenderit libero, et quam, unde incidunt vitae nisi eum officia perferendis saepe, dignissimos. Eligendi, recusandae, dolore! Temporibus eius tempora nulla rerum dolores, dolorem beatae? Quos tempore minima maxime atque, commodi?</p>
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <a href="" class="btn btn-success">Request Service</a>
+          </div>
+        </div><br>
+      </section>
+
+      <hr>
+
+    </div>
+  </div>
+
+
+	<!--<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
+    </div>-->
+
+
+
+</body>
+</html>

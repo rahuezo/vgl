@@ -3,24 +3,25 @@
 <html>
 <head>
     {% load static %}
-    
+    {% load vgl_extras %}
+
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
 	<script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
-    
+
     <title>Page Title</title>
 </head>
 
 <body>
 	<!--TOP OF WEBSITE-->
-	
+
 	<div class="jumbotron">
 		<div class="row">
-			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">	
+			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">
 			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
 			<div class="contact-info-top">
 				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
@@ -28,11 +29,11 @@
 				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
 				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
 				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
-			</div>	
+			</div>
 		</div>
-		
+
 	</div>
-    
+
     <nav class="navbar navbar-inverse" id="navbar">
        <div class="container-fluid">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,93 +46,190 @@
            </button>
            <a class="navbar-brand" id="page-brand-onscroll" href="#">Valley Green Landscape</a>
          </div>
-     
+
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           
+
            <ul class="nav navbar-nav navbar-center" id="top-links">
              <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
              <li><a href="{% url 'valley_green_landscape:gallery' %}" class="current">Gallery</a></li>
+             <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
              <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
              <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
-             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>              
+             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
            </ul>
          </div><!-- /.navbar-collapse -->
        </div><!-- /.container-fluid -->
     </nav><br>
-	
+
 	<!--END TOP OF WEBSITE-->
-    
+
 	<div class="container first-gallery-element">
 		<div id="image-catetories" class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				
-				{% for badge in badges %}
-					{{ badge|safe }}
-				{% endfor %}
+
+        <button class="btn btn-primary cat-view-btn" type="button" name="cat1">
+          Category 1 <span class="badge">4</span>
+        </button>
+
+        <button class="btn btn-success cat-view-btn" type="button" name="cat2">
+          Category 2 <span class="badge">4</span>
+        </button>
+
+        <button class="btn btn-info" type="button">
+          Category 3 <span class="badge">4</span>
+        </button>
+
+        <button class="btn btn-warning" type="button">
+          Category 4 <span class="badge">4</span>
+        </button>
+
+        <button class="btn btn-danger" type="button">
+          Category 5 <span class="badge">4</span>
+        </button>
+
 			</div>
 		</div><br>
-		
-        <div class="gallery-wrapper">
+
+    <div class="gallery-wrapper" id="cat1">
 			<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-8 main-image" id="main-img-holder">
-				<img src="{% static 'valley_green_landscape/img/pic.jpg' %}" alt="">
+			<div class="col-lg-8 col-md-8 col-sm-8 main-image" id="main-img-holder1">
+        <a href="#" data-toggle="modal" data-target="#large-img-viewer" id="enlarge-img-btn" onclick="set_modal_image(this);"><img src="/static/valley_green_landscape/img/bun_hair.jpg"></a>
 			</div>
-			
+
 			<div class="col-lg-4 col-md-4 col-sm-4 text-center">
-				<h1 class="main-title gallery-category">Image Category</h1>
-				
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi tenetur architecto eius corrupti minus similique voluptatibus consectetur voluptas adipisci, vel, corporis iure quasi dolore eveniet commodi rerum ea est magnam obcaecati animi. Tempora
-                officiis odio laudantium omnis excepturi distinctio mollitia nihil dolor labore, magnam assumenda debitis nesciunt dolore reiciendis nemo possimus, vitae minima vero pariatur. Quidem magni velit, numquam nemo aliquid nostrum nesciunt vitae eveniet atque
-                impedit eaque, incidunt, a! Eveniet laboriosam, quaerat deserunt fugit, velit veritatis rerum tempora dignissimos praesentium sapiente officiis sed mollitia vitae in rem! Porro quidem consequatur, quis labore voluptates at possimus modi magni reprehenderit,
-                necessitatibus nulla eum libero omnis hic laborum perspiciatis, quasi nihil ullam impedit provident reiciendis, facilis! Sint natus hic dolor quo eligendi!</p>
+				<h1 class="main-title gallery-category">Category Text 1</h1>
+
+				<p class="main-img-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi tenetur architecto eius corrupti minus similique voluptatibus consectetur voluptas adipisci, vel, corporis iure quasi dolore eveniet commodi rerum ea est magnam obcaecati animi. Tempora
+          officiis odio laudantium omnis excepturi distinctio mollitia nihil dolor labore, magnam assumenda debitis nesciunt dolore reiciendis nemo possimus, vitae minima vero pariatur. Quidem magni velit, numquam nemo aliquid nostrum nesciunt vitae eveniet atque
+          impedit eaque, incidunt, a! Eveniet laboriosam, quaerat deserunt fugit, velit veritatis rerum tempora dignissimos praesentium sapiente officiis sed mollitia vitae in rem! Porro quidem consequatur, quis labore voluptates at possimus modi magni reprehenderit,
+          necessitatibus nulla eum libero omnis hic laborum perspiciatis, quasi nihil ullam impedit provident reiciendis, facilis! Sint natus hic dolor quo eligendi!</p>
 			</div>
 			</div> <br>
-			
-			<div class="row">
-				   
+
+			<div class="row thumbnail-row1">
+
+
 				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
 					<div class="thumbnail-container">
-						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/bun_hair.jpg' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/bun_hair.jpg' %}" alt=""></a>
-					</div>					
-				</div>
-				
-				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
-					<div class="thumbnail-container">
-						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/bg.png' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/bg.png' %}" alt=""></a>	
-					</div>
-					
-				</div>
-				
-				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
-					<div class="thumbnail-container">
-						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/pic.jpg' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/pic.jpg' %}" alt=""></a>
+            <a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/bun_hair.jpg' %}" alt="something" data-category="1" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="current-img-indicator"></a>
 					</div>
 				</div>
-				
+
+
+
 				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
 					<div class="thumbnail-container">
-						<a href="#" onclick="view_image('{% static 'valley_green_landscape/img/2.jpg' %}');" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/2.jpg' %}" alt=""></a>
+						<a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/bg.png' %}" alt="" data-category="1" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a>
+					</div>
+
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/pic.jpg' %}" alt="" data-category="1" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a>
 					</div>
 				</div>
-				
+
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/2.jpg' %}" alt="" data-category="1" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a>
+					</div>
+				</div>
+
 			</div>
-			
+
 		</div>
-		
+
+    {# another gallery container#}
+
+    <div class="gallery-wrapper" id="cat2">
+			<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8 main-image" id="main-img-holder2">
+        <a href="#" data-toggle="modal" data-target="#large-img-viewer" id="main-img-holder-btn" onclick="set_modal_image(this);"><img src="/static/valley_green_landscape/img/3.jpg"></a>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-4 text-center">
+				<h1 class="main-title gallery-category">Category Text <small class="subheader"></small></h1>
+
+				<p class="main-img-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi tenetur architecto eius corrupti minus similique voluptatibus consectetur voluptas adipisci, vel, corporis iure quasi dolore eveniet commodi rerum ea est magnam obcaecati animi. Tempora
+          officiis odio laudantium omnis excepturi distinctio mollitia nihil dolor labore, magnam assumenda debitis nesciunt dolore reiciendis nemo possimus, vitae minima vero pariatur. Quidem magni velit, numquam nemo aliquid nostrum nesciunt vitae eveniet atque
+          impedit eaque, incidunt, a! Eveniet laboriosam, quaerat deserunt fugit, velit veritatis rerum tempora dignissimos praesentium sapiente officiis sed mollitia vitae in rem! Porro quidem consequatur, quis labore voluptates at possimus modi magni reprehenderit,
+          necessitatibus nulla eum libero omnis hic laborum perspiciatis, quasi nihil ullam impedit provident reiciendis, facilis! Sint natus hic dolor quo eligendi!</p>
+			</div>
+			</div> <br>
+
+			<div class="row thumbnail-row1">
+
+
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+            <a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/3.jpg' %}" alt="something" data-category="2" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident." class="current-img-indicator"></a>
+					</div>
+				</div>
+
+
+
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/4.jpg' %}" alt="" data-category="2" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"></a>
+					</div>
+
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/5.jpg' %}" alt="" data-category="2" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-3 thumbnail-img">
+					<div class="thumbnail-container">
+						<a href="#" class="thumbnail-img-btn"><img src="{% static 'valley_green_landscape/img/6.jpg' %}" alt="" data-category="2" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."></a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="large-img-viewer" tabindex="-1" role="dialog" aria-labelledby="img-viewer-label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title" id="img-viewer-label">Some Description</h2>
+          </div>
+          <div class="modal-body">
+            <img src="" alt="" id="enlarged-image" class="img-responsive">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 		<a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</div>
-		
+
 		<br><br><br><br>
-	
+
 	<!--<div id="footer">
       <div class="container">
         <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
       </div>
     </div>-->
-    
 
 
+<script type="text/javascript">
+  $(document).ready(function() {
+      pick_default_viewer();
+  });
+
+</script>
 
 </body>
 </html>

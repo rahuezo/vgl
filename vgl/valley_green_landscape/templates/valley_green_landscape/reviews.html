@@ -3,24 +3,24 @@
 <html>
 <head>
     {% load static %}
-    
+
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'valley_green_landscape/css/font-awesome.min.css' %}">
-	
+
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
-    
+
     <title>Page Title</title>
 </head>
 
 <body>
 	<!--TOP OF WEBSITE-->
-	
+
 	<div class="jumbotron">
 		<div class="row">
-			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">	
+			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">
 			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
 			<div class="contact-info-top">
 				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
@@ -28,11 +28,11 @@
 				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
 				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
 				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
-			</div>	
+			</div>
 		</div>
-		
+
 	</div>
-    
+
     <nav class="navbar navbar-inverse" id="navbar">
        <div class="container-fluid">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,23 +45,24 @@
            </button>
            <a class="navbar-brand" id="page-brand-onscroll" href="#">Valley Green Landscape</a>
          </div>
-     
+
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           
+
            <ul class="nav navbar-nav navbar-center" id="top-links">
              <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
              <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+             <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
              <li><a href="{% url 'valley_green_landscape:reviews' %}" class="current">Reviews</a></li>
              <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
-             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>              
+             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
            </ul>
          </div><!-- /.navbar-collapse -->
        </div><!-- /.container-fluid -->
     </nav><br>
-	
+
 	<!--END TOP OF WEBSITE-->
-    
+
 	<div class="container">
         <br>
         <div class="row text-center first-gallery-element">
@@ -75,23 +76,28 @@
 			<button type="button" class="btn btn-primary btn-lg submit-btn" data-toggle="modal" data-target="#myModal">
 			  Add a Review
 			</button>
-			
-            <!--<a class="btn btn-success btn-lg submit-btn" data-toggle="modal" data-target="#myModal" href="#" id="open-review-dialog">-->
-            <!--    <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
-            <!--    Add a review-->
-            <!--</a>-->
+
         </div>
 
-        {% if messages %}
-            {% for message in messages %}
-                <br>
-                <div class="alert alert-success alert-dismissable" id="successful-post">
-                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                  <strong>Thank you for your review {{ message }}!</strong>
-                </div>
-            {% endfor %}
-        {% endif %}
-		
+    <!--See more review text modal-->
+
+    <div class="modal fade" id="review-see-more" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--end see more-->
+
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
@@ -147,136 +153,93 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				
+
 				<button type="submit" class="btn btn-success add-review-btn" aria-label="Left Align" id="submit-review-btn">
                             Submit Review
                 </button>
 			  </div>
-			  
+
 			  </form>
 			</div>
 		  </div>
 		</div>
-		
-        <div class="popup" data-popup="popup-1">
-            <div class="popup-inner">
-                <h1 class="text-center">Add a Review</h1>
-                <hr class="custom-hr"><br>
-
-                <form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Photo URL</label>
-                                <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Review Text</label>
-                                <textarea placeholder="Add a review" class="form-control input-lg" name="review-text" required></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Overall Rating (1 is low and 5 is high)</label><br>
-                                <input type="number" name="review-score" min="1" max="5" value="5" class="form-control" required>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row text-center">
-
-                        <a data-popup-close="popup-1" href="#" class="btn btn-danger btn-lg cancel-btn" id="cancel-review-btn">Close</a>
-                        <button type="submit" class="btn btn-success btn-lg add-review-btn" aria-label="Left Align" id="submit-review-btn">
-                            Submit Review
-                        </button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
 
 		<br>
-		
+
 		<hr>
-		
-        {% if reviews %}
-            {% for review in reviews %}
 
-                <div class="review-container {% if forloop.counter0|divisibleby:2 %}even{% endif %}">
-                    <div class="row">
-                        <div class="col-xs-4 col-md-2">
-                            <div class="thumbnail">
-                                <img src="{{ review.photo }}" alt="{{ review.user }}" class="reviewer-profile-img img-thumbnail">
-                                <div class="text-center">
-                                    <h4><b>{{ review.user }}</b></h4>
-                                </div>
-                            </div>
+    {% if messages %}
+        {% for message in messages %}
+            <br>
+            <div class="alert alert-success alert-dismissable" id="successful-post">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Thank you for your review {{ message }}!</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+      {% if reviews %}
+          {% for review in reviews %}
+
+              <div class="review-container {% if forloop.counter0|divisibleby:2 %}even{% endif %}" id="review{{ forloop.counter }}">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-xs-2">
+                          <div class="thumbnail">
+                              {% if review.verified %}
+                                <span class="badge verified"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>
+                              {% endif %}
+
+                              <img src="{{ review.photo }}" alt="{{ review.user }}" class="reviewer-profile-img img-thumbnail">
+
+                              <div class="text-center">
+                                  <h4><strong>{{ review.user }}</strong></h4>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="reviewer-comment-text text-center col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                          <input type="hidden" value="{{ review.text }}" class="full-text">
+                          <i class="fa fa-quote-left fa-2x fa-pull-left quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
+
+                          <i class="fa fa-quote-right fa-2x fa-pull-right quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
+                          <br><br>
+
+                      </div>
 
 
-                            <!--</a>-->
+                  </div>
 
-                        </div>
+                  <div class="row">
+                      <div class="review-post-date col-md-3 review-star-score">
+                          {{ review.star_score|safe}} {{ review.score }} out of 5
+                      </div>
+                  </div>
 
-                        <div class="reviewer-comment-text text-center col-md-10">
-                            <i class="fa fa-quote-left fa-2x fa-pull-left quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
-                             {{ review.text }}
-                            <i class="fa fa-quote-right fa-2x fa-pull-right quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
-                        </div>
-                    </div>
+                  <div class="row">
+                      <div class="review-post-date col-md-3">
+                          <p>Posted on: {{ review.posted_at }}</p>
+                      </div>
+                  </div>
+              </div><br>
+          {% endfor %}
+      {% else %}
 
-                    <div class="row">
-                        <div class="review-post-date col-md-3 review-star-score">
-                            {{ review.star_score|safe}} {{ review.score }} out of 5
-                        </div>
-                    </div>
+      <div class="jumbotron text-center">
+          <h1>There are currently no reviews available.<br>You can add one by clicking on <b>Add a Review</b></h1>
+      </div>
+      {% endif %}
 
-                    <div class="row">
-                        <div class="review-post-date col-md-3">
-                            <p>Posted on: {{ review.posted_at }}</p>
-                        </div>
-                    </div>
-
-
-                </div><br>
-				
-				<!--<hr>-->
-            {% endfor %}
-        {% else %}
-
-        <div class="jumbotron text-center">
-            <h1>There are currently no reviews available.<br>You can add one by clicking on <b>Add a Review</b></h1>
-        </div>
-        {% endif %}
-		<a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+      <a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</div>
-	<br><br><br><br>
-	
+
+  <br><br><br><br>
+
 	<!--<div id="footer">
       <div class="container">
         <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
       </div>
     </div>-->
-    
+
 
 
 

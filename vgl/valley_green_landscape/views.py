@@ -1,6 +1,6 @@
 from django.core.mail import EmailMessage
 from django.shortcuts import render
-from models import Review
+from models import Review, GalleryContainer, GalleryImage
 
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -14,26 +14,14 @@ def index(request):
 
     return render(request, 'valley_green_landscape/index.html', context)
 
+def services(request):
+    context = {}
+
+    return render(request, 'valley_green_landscape/services.html', context)
 
 def gallery(request):
-    badge_template = """<button class="{0}" type="button" onclick="set_gallery_category('{1}');">{2} <span class="badge">{3}</span></button>"""
-    
-    badge_types = ['btn btn-primary', 'btn btn-warning', 'btn btn-danger', 'btn btn-success', 'btn btn-info', 'btn btn-muted']
-    
-    categories_path = 'valley_green_landscape/static/valley_green_landscape/img/gallery'
-    
-    categories = [i for i in os.listdir(categories_path)]
-    
-    badges = []
-    
-    for i in range(len(categories)):
-        number_of_items = len(os.listdir(os.path.join(categories_path, categories[i])))
-        badges.append(badge_template.format(badge_types[i%len(badge_types)], categories[i], categories[i], number_of_items))
-        
+
     context = {
-        'badges': badges,
-        'main_image': '',
-        'thumbnails':'', 
     }
 
     return render(request, 'valley_green_landscape/gallery.html', context)
@@ -72,11 +60,45 @@ def send_email(request):
     if request.method == "POST":
         user_name = request.POST.get('user-name')
         user_email = request.POST.get('user-email')
+
+        user_address = request.POST.get('address-line')
+        user_city = request.POST.get('city-line')
+        user_state = request.POST.get('state-line')
+        user_zip = request.POST.get('zip-line')
+
         user_subject = request.POST.get('user-subject')
         user_message = request.POST.get('user-message')
 
-        email = EmailMessage("{0} - {1}".format(user_name.upper(), user_subject.capitalize()), user_message,
-                             to=[user_email])
+        to_email = 'rahuezo@ucdavis.edu'
+
+        email_subject = user_subject.upper()
+
+        location = """
+        {0}
+            {1}
+            {2},{3}
+        """.format(user_address, user_city, user_state, user_zip)
+
+        email_body = """
+        Subject:
+            {0}
+        Email:
+            {1}
+
+        Name:
+            {2}
+
+        Location:
+            {3}
+
+        Content:
+            {4}
+
+        """.format(email_subject, user_email, user_name.upper(), location, user_message)
+
+
+        email = EmailMessage("{0} - {1}".format(user_name.upper(), email_subject), email_body,
+                             to=[to_email])
 
         email.send()
 

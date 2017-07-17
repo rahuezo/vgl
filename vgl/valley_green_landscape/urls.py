@@ -8,6 +8,7 @@ app_name = 'valley_green_landscape'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^gallery/$', views.gallery, name='gallery'),
+    url(r'^services/$', views.services, name='services'),
     url(r'^reviews/$', views.reviews, name='reviews'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^about/$', views.about, name='about'),

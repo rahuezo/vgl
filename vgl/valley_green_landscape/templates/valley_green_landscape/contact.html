@@ -3,24 +3,24 @@
 <html>
 <head>
     {% load static %}
-    
+
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
 	<script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
-    
+
     <title>Page Title</title>
 </head>
 
-<body>	
+<body>
 	<!--TOP OF WEBSITE-->
-	
+
 	<div class="jumbotron">
 		<div class="row">
-			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">	
+			<img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top">
 			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
 			<div class="contact-info-top">
 				Call Us: <a href="tel:8183621668">(818) 362-1668</a><br><br>
@@ -28,11 +28,11 @@
 				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
 				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
 				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
-			</div>	
+			</div>
 		</div>
-		
+
 	</div>
-    
+
     <nav class="navbar navbar-inverse" id="navbar">
        <div class="container-fluid">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,48 +43,49 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
            </button>
-           <a class="navbar-brand" id="page-brand-onscroll" href="#">Valley Green Landscape</a>
+           <a class="navbar-brand" id="page-brand-onscroll" href="#" class="desktop-brand">Valley Green Landscape</a>
          </div>
-     
+
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           
+
            <ul class="nav navbar-nav navbar-center" id="top-links">
              <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
              <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+             <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
              <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
              <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
-             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>              
+             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
            </ul>
          </div><!-- /.navbar-collapse -->
        </div><!-- /.container-fluid -->
     </nav>
-	
+
 	<!--END TOP OF WEBSITE-->
-	
+
 	<div id="contact-wrapper" class="container first-gallery-element">
 		<div class="jumbotron text-center contact-info center">
 				<h1 class='main-title'>Contact Us</h1>
-				
+
 				<hr>
-				
+
 				<br>
-		
+
 				<div id="contact-info">
-					<div class="row">				
+					<div class="row">
 						<div id="address">
 							<i class="fa fa-map-marker" style="font-size:30px"></i>
 							<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline">Aztec St. Sylmar, CA 91342</a>
-		
+
 					<div class="row">
 						<div id="phone">
 							<i class="fa fa-phone" aria-hidden="true"  style="font-size:30px"></i>
 							<a href="tel:8183621668">(818) 362-1668</a>
 						</div>
-					</div>			
+					</div>
 				</div>
 		</div>
-		
+
 		<br>
 
 		{% if messages %}
@@ -98,11 +99,11 @@
 		{% endfor %}
 
         {% endif %}
-		
+
 		<div id="email-form-container">
 			<h1 id="form-msg" class="text-center">If you'd prefer to email us, please fill out this form.</h1>
 			<br>
-			
+
 			<div class="email-form">
 				<form action="{% url 'valley_green_landscape:send_email' %}" class="text-center" method="post">
 					{% csrf_token %}
@@ -112,57 +113,57 @@
 							<input type="text" placeholder="Full Name" class="form-control input-lg" name="user-name" required>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Email *</label>
 							<input type="email" placeholder="Email" class="form-control input-lg" name="user-email" required>
-						</div>	
+						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Address</label>
 							<input type="text" placeholder="Address" class="form-control input-lg" name="address-line">
-						</div>	
+						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>City</label>
 							<input type="text" placeholder="City" class="form-control input-lg" name="city-line">
-						</div>	
+						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>State</label>
 							<input type="text" placeholder="State" class="form-control input-lg" name="state-line">
-						</div>	
+						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Zip Code *</label>
 							<input type="text" placeholder="Zip Code" class="form-control input-lg" name="zip-line" required>
-						</div>	
+						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Subject *</label>
 							<input type="text" placeholder="e.g. Tree Trimming Estimate, Weekly Yard Maintenance, etc." class="form-control input-lg" name="user-subject" required>
-						</div>	
+						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="form-group text-left">
 							<label>Message *</label>
 							<textarea placeholder="Add Message" class="form-control input-lg" name="user-message" required></textarea>
-						</div>	
+						</div>
 					</div>
-					
-						
+
+
 					<div class="row text-center">
 						<button type="submit" class="btn btn-primary btn-lg submit-btn">
 							Submit
@@ -174,7 +175,7 @@
 		<a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </div>
 	<br><br><br><br>
-	
+
 	<!--<div id="footer">
       <div class="container">
         <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>

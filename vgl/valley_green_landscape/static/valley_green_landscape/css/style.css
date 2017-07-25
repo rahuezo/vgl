@@ -530,7 +530,7 @@ h1.about-person-name {
 #footer {
   /*position: fixed;*/
   background-color: #1d1e22;
-  padding-top: 100px; 
+  margin-top: 100px;
   width: 100%;
   height: 400px;
 }
@@ -618,8 +618,46 @@ h1.about-person-name {
   color: #FFF;
 }
 
-
-.back-to-top, .back-to-top:active:focus, .back-to-top.active:focus, .back-to-top:focus {
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#back-to-top span {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#back-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+#back-to-top:hover i {
+    color: #fff;
+    top: 5px;
+    cursor: pointer;
+}
+/*.back-to-top, .back-to-top:active:focus, .back-to-top.active:focus, .back-to-top:focus {
   cursor: pointer;
   position: fixed;
   bottom: 5px;
@@ -627,21 +665,21 @@ h1.about-person-name {
   display:none;
   background-color: transparent;
   border-color: #ccc;
-  /*width: 300px;*/
+
   -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
   -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
   -o-transition: background .2s ease-in-out, border .2s ease-in-out;
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
-/*4CAF50*/
+
 
 
 .back-to-top:hover {
   border-color: #000;
   background-color: rgba( 50,155, 17,0.3);
 }
-
+*/
 
 
 .glyphicon.glyphicon-chevron-up {
@@ -710,6 +748,10 @@ body #large-img-viewer {
     max-height: 80%;
     background: red;
 }*/
+
+.modal {
+  z-index: 99999;
+}
 
 .verified{
   background: #6AD349;
@@ -817,7 +859,7 @@ body #large-img-viewer {
 }
 
 
-@media (max-width: 1550px) {
+/*@media (max-width: 1550px) {
   .navbar-header {
       float: none;
   }
@@ -852,4 +894,4 @@ body #large-img-viewer {
   .collapse.in{
       display:block !important;
   }
-}
+}*/

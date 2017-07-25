@@ -3,7 +3,7 @@
 <html>
 <head>
     {% load static %}
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/jquery.bxslider.css' %}">
@@ -19,11 +19,10 @@
 
 <body>
 	<!--TOP OF WEBSITE-->
-
+<!--
 	<div class="jumbotron">
 		<div class="row">
-			<a href="{% url 'valley_green_landscape:index' %}"><img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" class="page-logo-top"></a>
-			<!--<h1 id="page-brand">Valley Green Landscape</h1>-->
+
 			<div class="contact-info-top">
 				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
 				<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a>
@@ -35,33 +34,45 @@
 
 	</div>
 
-    <nav class="navbar navbar-inverse" id="navbar">
-       <div class="container-fluid">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-             <span class="sr-only">Toggle navigation</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" id="page-brand-onscroll" href="{% url 'valley_green_landscape:index' %}">Valley Green Landscape</a>
-         </div>
+-->
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'valley_green_landscape:index' %}" class="desktop-brand">
+          <!-- <img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" id="navbar-logo"> -->
+          VGL
+        </a>
+      </div>
 
-           <ul class="nav navbar-nav navbar-center" id="top-links">
-             <li><a href="{% url 'valley_green_landscape:index' %}" class="current">Home</a></li>
-             <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
-             <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
-             <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
-             <li><a href="{% url 'valley_green_landscape:contact' %}">Contact</a></li>
-             <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
-           </ul>
-         </div><!-- /.navbar-collapse -->
-       </div><!-- /.container-fluid -->
-    </nav><br>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left" id="top-links">
+          <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+          <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
+          <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" id="navbar-social-media">
+          <li><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+          <li><a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a></li>
+          <li><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+          <li><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+          <li><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
 	<!--END TOP OF WEBSITE-->
 

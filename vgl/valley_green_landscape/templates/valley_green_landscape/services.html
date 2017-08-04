@@ -19,73 +19,69 @@
 
 <body>
 	<!--TOP OF WEBSITE-->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-left" href="{% url 'valley_green_landscape:index' %}" id="desktop-brand">
+          <img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}">
+          <span>Valley Green Landscape</span>
+        </a>
+      </div>
 
-  <!--
-  	<div class="jumbotron">
-  		<div class="row">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-  			<div class="contact-info-top">
-  				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
-  				<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a>
-  				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
-  				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
-  				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
-  			</div>
-  		</div>
+        <ul class="nav navbar-nav navbar-right" id="top-links">
+          <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+          <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
+          <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
+        </ul>
 
-  	</div>
-
-  -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'valley_green_landscape:index' %}" class="desktop-brand">
-            <!-- <img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" id="navbar-logo"> -->
-            VGL
-          </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-left" id="top-links">
-            <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
-            <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
-            <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
-            <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
-            <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
-            <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right" id="navbar-social-media">
-            <li><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
-            <li><a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a></li>
-            <li><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
-            <li><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
-            <li><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+        <!-- <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick Links <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="text-center"><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+            </ul>
+          </li>
+        </ul> -->
+        <!-- <ul class="nav navbar-nav navbar-right" id="navbar-social-media">
+          <li><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+          <li><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+          <li><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+          <li><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+        </ul> -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
   	<!--END TOP OF WEBSITE-->
 
   <div class="container">
-		<div class="jumbotron text-center first-gallery-element">
-			<h1 class="main-title">Services</h1>
-    </div><br><br>
+    <div class="jumbotron text-center">
+			<h1>Services</h1>
+    </div>
 
-		<hr>
+    <hr><br>
+
+    <div class="clearfix"></div>
+
     <div class="services-sections">
 
-  		<section class="review-container even">
+  		<section class="review-container even" id="gardening-service">
         <h2>Gardening Service</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eos nemo, odio, ipsa perferendis cum eligendi neque nihil officia nobis, optio repellat quo totam assumenda molestiae! Voluptatem perferendis delectus ipsa dolores illum dolorum numquam recusandae. Vero consequatur unde quaerat ratione labore maxime molestias ipsa et quae, cupiditate, sequi quisquam incidunt voluptate. Maxime facilis, perspiciatis cupiditate a nemo numquam ab explicabo cumque! A tempora, inventore odit deleniti labore laudantium dolore sed veritatis voluptatibus provident fuga itaque voluptate magnam perferendis. Delectus molestiae vel unde velit, error dolorem ipsam dolore pariatur assumenda, quas, fugit enim libero ipsa molestias ut totam incidunt! Quas, facilis!</p>
 
@@ -97,7 +93,7 @@
         </div><br>
       </section>
 
-      <section class="review-container">
+      <section class="review-container" id="sodding-reseeding">
         <h2>Sodding and Reseeding</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate reiciendis delectus unde quae placeat tempora nobis quibusdam totam eveniet, consequuntur dolorem ab facere adipisci ad voluptatum asperiores repellendus explicabo ea ullam quia, quam possimus quod quos iste. Itaque unde architecto, iusto ipsa deleniti facilis. Deleniti quod dolor error repellendus, ex! Perspiciatis eveniet quod minima ad cumque accusamus sapiente repellat accusantium!</p>
         <div class="service-menu">
@@ -108,7 +104,7 @@
         </div><br>
       </section>
 
-      <section class="review-container even">
+      <section class="review-container even" id="valve-replacement">
         <h2>Valve Replacement</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eos consectetur, corporis sunt tempora illum ex, velit voluptates magni accusantium amet repellat officia dicta natus veniam mollitia recusandae! Velit beatae porro soluta vitae. Similique labore obcaecati aut itaque pariatur officia, maxime, mollitia numquam quam, corporis voluptatem. Alias perspiciatis enim exercitationem perferendis officia necessitatibus quis id dolorem soluta asperiores deleniti, placeat voluptate, et nesciunt blanditiis inventore illum, est dolores dolorum reprehenderit. Fugit consequuntur ipsum quibusdam illum dolor similique voluptatum, eaque numquam sequi amet maxime, inventore iusto id perferendis quod blanditiis exercitationem temporibus quia, adipisci, accusantium officiis sapiente. Provident cumque neque eum.</p>
         <div class="service-menu">
@@ -119,7 +115,7 @@
         </div><br>
       </section>
 
-      <section class="review-container">
+      <section class="review-container" id="sprinkler-installation">
         <h2>Sprinkler Installation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis numquam, qui nihil. Explicabo cum nostrum doloribus repellendus laboriosam blanditiis consequatur officiis quidem, aspernatur tenetur expedita dolorum culpa id deserunt quisquam excepturi aliquam vero pariatur, consequuntur quo quaerat veniam cupiditate. Vel sapiente recusandae error laborum aliquid inventore voluptate, culpa beatae, cumque odit cum eos quidem nesciunt illum incidunt totam sit corrupti nihil ea? Maxime at maiores esse ut quibusdam porro tenetur hic incidunt, tempore officiis nisi aliquid deserunt laborum quasi facilis.</p>
         <div class="service-menu">
@@ -130,7 +126,7 @@
         </div><br>
       </section>
 
-      <section class="review-container even">
+      <section class="review-container even" id="hardscape-design-and-installation">
         <h2>Hardscape Design and Installation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolores tenetur voluptates sequi eligendi aliquid provident optio natus explicabo, aspernatur voluptatem ipsam suscipit eum ipsa, necessitatibus officia, excepturi quia illo architecto vel aperiam? Deserunt earum, magnam. Est enim distinctio ipsam quos tempora, dicta nostrum quae nam atque, recusandae in similique ducimus aliquam. Modi eos doloremque deserunt voluptatem delectus neque dolore labore. Commodi numquam officia eaque omnis veniam dolores doloremque reiciendis.</p>
         <div class="service-menu">
@@ -232,6 +228,9 @@
       <hr>
 
     </div>
+    <a id="back-to-top" class="btn btn-info">
+      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+    </a>
   </div>
 
 

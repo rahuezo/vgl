@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'valley_green_landscape/css/font-awesome.min.css' %}">
+
+    <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
+    <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
+
+    <title>Page Title</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-left" href="{% url 'valley_green_landscape:index' %}" class="desktop-brand">
+          <img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}">
+          <span>Valley Green Landscape</span>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-left" id="top-links">
+          <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+          <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
+          <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick Links <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="text-center"><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- <ul class="nav navbar-nav navbar-right" id="navbar-social-media">
+          <li><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+          <li><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+          <li><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+          <li><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+        </ul> -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!--END TOP OF WEBSITE-->
+
+	<div class="container">
+    <div class="row text-center">
+      <h1>Welcome {{ username }}!</h1>
+      <h2>Please add your review below.</h2>
+    </div> <br><br>
+
+    <form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" value="{{ username }}" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="form-group">
+            <label>Photo URL</label>
+            <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="form-group">
+            <label>Review Text</label>
+            <textarea placeholder="Add a Review" class="form-control input-lg" name="review-text" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="form-group">
+            <label>Overall Rating</label><br>
+            <input type="number" name="review-score" min="1" max="5" value="5" class="form-control input-lg" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <button type="submit" class="btn btn-success btn-lg" id="email-form-submit-btn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

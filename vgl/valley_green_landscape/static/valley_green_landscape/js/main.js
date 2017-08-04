@@ -70,7 +70,7 @@ function show_focus_review(element) {
 }
 
 $(document).ready(function() {
-  fix_review_size();
+  
 
   $('.cat-view-btn').click(function() {
     var corresponding_viewer_id = $(this).prop('name');
@@ -132,7 +132,7 @@ $(document).ready(function() {
       }, 500);
   });
 
-}); 
+});
 
       // ===== Scroll to Top ====
 

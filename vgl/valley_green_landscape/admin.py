@@ -1,8 +1,7 @@
 from django.contrib import admin
-from models import Review, GalleryContainer, GalleryImage
+from models import Review, User
 
 # Register your models here.
 
 admin.site.register(Review)
-admin.site.register(GalleryContainer)
-admin.site.register(GalleryImage)
+admin.site.register(User)

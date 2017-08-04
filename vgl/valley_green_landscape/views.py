@@ -1,23 +1,41 @@
 from django.core.mail import EmailMessage
 from django.shortcuts import render
-from models import Review, GalleryContainer, GalleryImage
+from models import Review, User
 
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from math import floor
-import os
+from django.conf import settings
+import csv
+
+
+def chunks(l, n):
+    new_list = []
+
+    for i in range(0, len(l), n):
+        new_list.append(l[i:i + n])
+    return new_list
 
 
 def index(request):
-    context = {}
+    with open(settings.MEDIA_ROOT + '/ok_cities.csv', 'rb') as csvfile:
+        rows = [row[0] for row in csv.reader(csvfile, delimiter=',')][:50]
+
+    city_chunks = chunks(rows, 90)
+
+    context = {
+        'cities': rows,
+    }
 
     return render(request, 'valley_green_landscape/index.html', context)
+
 
 def services(request):
     context = {}
 
     return render(request, 'valley_green_landscape/services.html', context)
+
 
 def gallery(request):
 
@@ -31,7 +49,11 @@ def reviews(request):
 
     all_reviews = Review.objects.all().order_by('-pk')
 
-    overall_score = sum([review.score for review in all_reviews]) / float(len(all_reviews))
+    if len(all_reviews) > 0:
+        overall_score = sum([review.score for review in all_reviews]) / float(len(all_reviews))
+    else:
+        overall_score = 5
+
     overall_score_star = int_to_star(floor(overall_score))
 
     context = {
@@ -42,6 +64,38 @@ def reviews(request):
     }
 
     return render(request, 'valley_green_landscape/reviews.html', context)
+
+
+def review_submission(request):
+    review_key = request.POST.get('review-key')
+
+    try:
+        current_user = User.objects.get(review_key=review_key)
+        username = current_user.username
+
+        context = {
+            'username': username,
+        }
+        return render(request, 'valley_green_landscape/add_review.html', context)
+
+    except:
+        all_reviews = Review.objects.all().order_by('-pk')
+
+        if len(all_reviews) > 0:
+            overall_score = sum([review.score for review in all_reviews]) / float(len(all_reviews))
+        else:
+            overall_score = 5
+
+        overall_score_star = int_to_star(floor(overall_score))
+
+        context = {
+            'overall_score_star': overall_score_star,
+            'overall_score': round(overall_score, 1),
+            'reviews': all_reviews,
+            'invalid_key': 'The Review Key you entered is invalid. Please try again!',
+
+        }
+        return render(request, 'valley_green_landscape/reviews.html', context)
 
 
 def contact(request):

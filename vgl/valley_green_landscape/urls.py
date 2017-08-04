@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^gallery/$', views.gallery, name='gallery'),
     url(r'^services/$', views.services, name='services'),
     url(r'^reviews/$', views.reviews, name='reviews'),
+    url(r'^review_submission/$', views.review_submission, name='review_submission'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^about/$', views.about, name='about'),
     url(r'^add_review/$', views.add_review, name='add_review'),

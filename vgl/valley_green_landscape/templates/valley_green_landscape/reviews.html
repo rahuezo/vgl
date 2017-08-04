@@ -16,80 +16,75 @@
 </head>
 
 <body>
-	<!--TOP OF WEBSITE-->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-left" href="{% url 'valley_green_landscape:index' %}" id="desktop-brand">
+          <img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}">
+          <span>Valley Green Landscape</span>
+        </a>
+      </div>
 
-  <!--
-  	<div class="jumbotron">
-  		<div class="row">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-  			<div class="contact-info-top">
-  				Call Us: <a href="tel:8183621668" id="phone-number">(818) 362-1668</a><br><br>
-  				<a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a>
-  				<a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a>
-  				<a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a>
-  				<a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
-  			</div>
-  		</div>
+        <ul class="nav navbar-nav navbar-right" id="top-links">
+          <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
+          <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
+          <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
+        </ul>
 
-  	</div>
+        <!-- <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick Links <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="text-center"><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+              <li class="text-center"><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+            </ul>
+          </li>
+        </ul> -->
+        <!-- <ul class="nav navbar-nav navbar-right" id="navbar-social-media">
+          <li><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
+          <li><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
+          <li><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
+          <li><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
+        </ul> -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-  -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'valley_green_landscape:index' %}" class="desktop-brand">
-            <!-- <img src="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" alt="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}" id="navbar-logo"> -->
-            VGL
-          </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-left" id="top-links">
-            <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
-            <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
-            <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
-            <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
-            <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
-            <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right" id="navbar-social-media">
-            <li><a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" id="phone-icon" style="font-size:20px"></i></a></li>
-            <li><a href="https://goo.gl/maps/GKUjoHKAS4x" target="_blank" class="no_underline"><i class="fa fa-map-marker" id="address-map-icon" style="font-size:20px"></i></a></li>
-            <li><a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" id="email-icon" style="font-size:20px"></i></a></li>
-            <li><a href="http://facebook.com"><i class="fa fa-facebook-official" id="facebook" style="font-size:20px"></i></a></li>
-            <li><a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-  	<!--END TOP OF WEBSITE-->
+  <!--END TOP OF WEBSITE-->
 
 	<div class="container">
+    <div class="text-center">
+      <br>
+      <h1>Overall Rating
         <br>
-        <div class="row text-center first-gallery-element">
-            <h2 class="overall-score">Overall Rating<br>{{ overall_score_star|safe }}
-                {{ overall_score }} out of 5
-            </h2>
-        </div><br>
+        <br>
+        {{ overall_score_star|safe }}
+        <br>
+        {{ overall_score }} out of 5.0
+      </h1> <br>
 
-        <div class="row text-center">
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary btn-lg submit-btn" data-toggle="modal" data-target="#myModal">
-			  Add a Review
-			</button>
+      <button type="button" class="btn btn-primary btn-lg submit-btn" data-toggle="modal" data-target="#confirm-post-review">
+  		  Add a Review
+  		</button>
+    </div>
 
-        </div>
+
+    <hr>
 
     <!--See more review text modal-->
 
@@ -110,75 +105,71 @@
 
     <!--end see more-->
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-			<div class="modal-content">
-			  <div class="modal-header text-center">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<!--<h4 class="modal-title" id="myModalLabel">Add a Review</h4>-->
-				<h1 class="main-title">
-					Add a Review
-				</h1>
-			  </div>
-			  <div class="modal-body">
-				<form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="Add Full Name" class="form-control input-lg" name="user-name" required>
-                            </div>
-                        </div>
-                    </div>
+    <!-- confirm you can post review -->
 
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Photo URL</label>
-                                <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">
-                            </div>
-                        </div>
+    <div class="modal fade" id="confirm-post-review" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please Enter Your Review Key</h4>
+          </div>
+          <form action="{% url 'valley_green_landscape:review_submission' %}" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                  <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                    <input type="text" class="form-control input-lg" id="review-key" name="review-key" placeholder="Review Key" required>
+                  </div>
+                </div>
+              </div>
 
-                    </div>
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal">
+              <input type="submit" class="btn btn-success" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Review Text</label>
-                                <textarea placeholder="Add a review" class="form-control input-lg" name="review-text" required></textarea>
-                            </div>
-                        </div>
-                    </div>
+    <div class="modal fade" id="edit-post-review" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please Enter Your Review Key to Edit Your Review</h4>
+          </div>
+          <form action="{% url 'valley_green_landscape:review_submission' %}" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                  <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                    <input type="text" class="form-control input-lg" id="review-key" name="review-key" placeholder="Review Key" required>
+                  </div>
+                </div>
+              </div>
 
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="form-group">
-                                <label>Overall Rating</label><br>
-                                <input type="number" name="review-score" min="1" max="5" value="5" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal">
+              <input type="submit" class="btn btn-success" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-                            </div>
-                        </div>
-                    </div>
+    <!-- end confirm post review -->
 
-			  </div>
-			  <div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-				<button type="submit" class="btn btn-success add-review-btn" aria-label="Left Align" id="submit-review-btn">
-                            Submit Review
-                </button>
-			  </div>
-
-			  </form>
-			</div>
-		  </div>
-		</div>
 
 		<br>
-
-		<hr>
 
     {% if messages %}
         {% for message in messages %}
@@ -190,48 +181,62 @@
         {% endfor %}
     {% endif %}
 
+    {% if invalid_key %}
+
+    <br>
+    <div class="alert alert-danger alert-dismissable" id="successful-post">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>{{ invalid_key }}</strong>
+    </div>
+
+    {% endif %}
+
       {% if reviews %}
           {% for review in reviews %}
 
-              <div class="review-container {% if forloop.counter0|divisibleby:2 %}even{% endif %}" id="review{{ forloop.counter }}">
-                  <div class="row">
-                      <div class="col-lg-2 col-md-2 col-xs-2">
-                          <div class="thumbnail">
-                              {% if review.verified %}
-                                <span class="badge verified"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>
-                              {% endif %}
+            <div class="review-container {% if forloop.counter0|divisibleby:2 %}even{% endif %}" id="review{{ forloop.counter }}">
+              <div class="row pull-right">
+                <a class="text-muted edit-review-btn" data-toggle="modal" data-target="#edit-post-review">
+                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </a>
+              </div>
+              <div class="row">
+                <div class="col-lg-2 col-md-4 col-xs-12">
+                  <div class="thumbnail">
+                    {% if review.verified %}
+                    <span class="badge verified"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>
+                    {% endif %}
 
-                              <img src="{{ review.photo }}" alt="{{ review.user }}" class="reviewer-profile-img img-thumbnail">
+                    <img src="{{ review.photo }}" alt="{{ review.user }}" class="reviewer-profile-img">
 
-                              <div class="text-center">
-                                  <h4><strong>{{ review.user }}</strong></h4>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="reviewer-comment-text text-center col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                          <input type="hidden" value="{{ review.text }}" class="full-text">
-                          <i class="fa fa-quote-left fa-2x fa-pull-left quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
-
-                          <i class="fa fa-quote-right fa-2x fa-pull-right quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
-                          <br><br>
-
-                      </div>
-
-
+                    <div class="text-center">
+                      <h4><strong>{{ review.user }}</strong></h4>
+                    </div>
                   </div>
+                </div>
 
-                  <div class="row">
-                      <div class="review-post-date col-md-3 review-star-score">
-                          {{ review.star_score|safe}} {{ review.score }} out of 5
-                      </div>
-                  </div>
+                <i class="fa fa-quote-left fa-2x fa-pull-left quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i>
+                <div class="reviewer-comment-text text-center col-lg-10 col-md-10 col-sm-8 col-xs-12">
+                    <input type="hidden" value="{{ review.text }}" class="full-text">
 
-                  <div class="row">
-                      <div class="review-post-date col-md-3">
-                          <p>Posted on: {{ review.posted_at }}</p>
-                      </div>
-                  </div>
+                </div>
+                <!-- <i class="fa fa-quote-right fa-2x fa-pull-right quote {% if forloop.counter0|divisibleby:2 %}even{% endif %}" aria-hidden="true"></i> -->
+                <br><br>
+
+
+                </div>
+
+            <div class="row">
+                <div class="review-post-date col-md-3 review-star-score">
+                    {{ review.star_score|safe}} {{ review.score }} out of 5
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="review-post-date col-md-3">
+                    <p>Posted on: {{ review.posted_at }}</p>
+                </div>
+            </div>
               </div><br>
           {% endfor %}
       {% else %}
@@ -241,7 +246,9 @@
       </div>
       {% endif %}
 
-      <a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button" title="Click to return to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="back-to-top" class="btn btn-info">
+      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+    </a>
 	</div>
 
   <br><br><br><br>
@@ -253,6 +260,10 @@
     </div>-->
 
 
+
+  <script type="text/javascript">
+    fix_review_size();
+  </script>
 
 
 </body>

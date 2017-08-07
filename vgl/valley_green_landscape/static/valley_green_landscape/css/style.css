@@ -97,11 +97,6 @@ html, body {
   color: #FFF;
 }
 
-
-.fa.fa-envelope {
-  color: red;
-}
-
 .contact-info-top {
   position: absolute;
   top: 15px;
@@ -785,6 +780,39 @@ body #large-img-viewer {
   font-size: 1.2em;
 }
 
+#hero-phone a{
+  color: #FFF;
+}
+
+#hero-phone a:hover {
+    text-decoration: underline;
+}
+
+footer {
+  background: #000;
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer a {
+  color: #DDD;
+}
+
+footer a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+/*footer #copyright {
+  position: fixed;
+  bottom: 10px;
+}*/
+
+#copyright {
+  position: absolute;
+  bottom: 0px;
+}
+
 #hero {
   background: #8FDC97;
   background-image: url('../img/forest.png');
@@ -793,6 +821,20 @@ body #large-img-viewer {
   /*height: 100%;*/
   color: #FFF;
   padding: 40px 40px 0px 40px;
+}
+
+#popular-work {
+  padding: 50px;
+}
+
+#work-where {
+  background: #8FDC97;
+  background-image: url('../img/forest.png');
+  background-position: center;
+  background-size: cover;
+  /*height: 100%;*/
+  color: #FFF;
+  padding: 50px;
 }
 
 #hero h1 {
@@ -879,9 +921,6 @@ body #large-img-viewer {
   color: #CCC;
 }
 
-#work-where {
-  padding: 100px;
-}
 
 #work-radius {
   max-width: 100%;

@@ -7,12 +7,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}">
 
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
 
-    <title>Page Title</title>
+    <title>Valley Green Landscape</title>
 </head>
 
 <body>
@@ -116,7 +117,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="user-name">Full Name *</label> -->
-            <input type="text" class="form-control input-lg" id="user-name" name="user-name" placeholder="Full Name" required>
+            <input type="text" class="form-control input-lg" id="user-name" name="user-name" placeholder="Full Name *" required>
           </div>
         </div>
       </div>
@@ -125,7 +126,16 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="user-email">Email *</label> -->
-            <input type="email" class="form-control input-lg" id="user-email" name="user-email" placeholder="Email" required>
+            <input type="tel" class="form-control input-lg" id="user-phone" name="user-phone" placeholder="Phone *">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="form-group">
+            <!-- <label for="user-email">Email *</label> -->
+            <input type="email" class="form-control input-lg" id="user-email" name="user-email" placeholder="Email (optional)">
           </div>
         </div>
       </div>
@@ -134,7 +144,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="address-line">Address</label> -->
-            <input type="text" class="form-control input-lg" id="address-line" name="address-line" placeholder="Address">
+            <input type="text" class="form-control input-lg" id="address-line" name="address-line" placeholder="Address (optional)">
           </div>
         </div>
       </div>
@@ -143,7 +153,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="city-line">City</label> -->
-            <input type="text" class="form-control input-lg" id="city-line" name="city-line" placeholder="City">
+            <input type="text" class="form-control input-lg" id="city-line" name="city-line" placeholder="City  (optional)">
           </div>
         </div>
       </div>
@@ -152,7 +162,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="state-line">State</label> -->
-            <input type="text" class="form-control input-lg" id="state-line" name="state-line" placeholder="State">
+            <input type="text" class="form-control input-lg" id="state-line" name="state-line" placeholder="State (optional)">
           </div>
         </div>
       </div>
@@ -161,7 +171,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="zip-line">Zip Code *</label> -->
-            <input type="number" class="form-control input-lg" id="zip-line" name="zip-line" placeholder="Zip Code" required>
+            <input type="number" class="form-control input-lg" id="zip-line" name="zip-line" placeholder="Zip Code *" required>
           </div>
         </div>
       </div>
@@ -170,7 +180,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="user-subject">Subject *</label> -->
-            <input type="text" class="form-control input-lg" id="user-subject" name="user-subject" placeholder="Subject" required>
+            <input type="text" class="form-control input-lg" id="user-subject" name="user-subject" placeholder="Subject *" value="{% if subject %}{{ subject }}{% else %}{% endif %}" required>
           </div>
         </div>
       </div>
@@ -179,7 +189,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <!-- <label for="user-message">Message *</label> -->
-            <textarea placeholder="Add Message" class="form-control input-lg" id="user-message" name="user-message" required></textarea>
+            <textarea placeholder="Add Message *" class="form-control input-lg" id="user-message" name="user-message" required></textarea>
           </div>
         </div>
       </div>
@@ -194,6 +204,30 @@
       <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
     </a>
   </div>
+  <footer class="footer">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" style="font-size:20px"></i> (818) 362-1668</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" style="font-size:20px"></i> vgl@gmail.com</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="https://www.facebook.com/Valley-Green-Landscape-357663454652249/"><i class="fa fa-facebook-official" style="font-size:20px"></i> Valley Green Landscape</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <p class="text-muted">
+        Copyright (c) 2017 Valley Green Lanscape All Rights Reserved.
+      </p>
+    </div>
+  </footer>
 	<!--<div id="footer">
 
       <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>

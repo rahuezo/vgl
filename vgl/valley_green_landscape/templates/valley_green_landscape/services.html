@@ -8,13 +8,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'valley_green_landscape/css/jquery.bxslider.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{% static 'valley_green_landscape/img/VGL_LOGO.png' %}">
 
     <script src="{% static 'valley_green_landscape/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/jquery.bxslider.min.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/main.js' %}"></script>
     <script src="{% static 'valley_green_landscape/js/bootstrap.js' %}"></script>
 
-    <title>Page Title</title>
+    <title>Valley Green Landscape</title>
 </head>
 
 <body>
@@ -88,7 +89,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Gardening Service">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -99,7 +104,13 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Sodding and Reeseding">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+
           </div>
         </div><br>
       </section>
@@ -110,7 +121,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Valve Replacement">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -121,7 +136,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Sprinkler Installation">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -132,18 +151,26 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Hardscape Design and Installation">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
 
       <section class="review-container">
-        <h2>Synthetic Turf</h2>
+        <h2>Synthetic Turf Maintenance and Installation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto molestiae dignissimos, quis sit exercitationem esse officia doloribus illo repellendus dolorum? Officiis quis nobis iure fuga voluptas laboriosam, nesciunt pariatur dolores optio, repellendus, assumenda nihil nulla architecto. Impedit cupiditate nemo odit, voluptatem, error minus beatae quia. Nisi, rem. Atque numquam vero harum, saepe quia error, tenetur alias architecto similique debitis. Quasi ipsam impedit voluptatibus amet ab. Aliquam neque quam, delectus odio laudantium earum accusantium laborum, corporis quibusdam dolores porro!</p>
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Synthetic Turf Maintenance and Installation">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -154,7 +181,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Concrete Curb">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -165,7 +196,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Mulch and Gravel Design">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -176,7 +211,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Drip System Installation and Repair">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -187,7 +226,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Tree Trimming">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -198,18 +241,26 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Palm and Tree Cleanup">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
 
       <section class="review-container">
-        <h2>Lots/Hillside Cleaning for Fire Regulation</h2>
+        <h2>Lot/Hillside Cleaning for Fire Regulation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, possimus, voluptas. Dicta, repellendus. Quis eveniet saepe esse at quae, dicta modi autem nulla reprehenderit, fugit voluptatem! Consectetur asperiores similique, saepe quisquam optio fuga animi laboriosam sunt accusamus expedita culpa harum nemo quibusdam id dolores quas praesentium fugiat recusandae eligendi! Voluptatibus assumenda iure delectus excepturi accusamus tempora. Quo in commodi incidunt nesciunt repellat velit eveniet sequi molestias et, dolorem numquam porro, nihil laudantium quas odio consequuntur delectus minima saepe dicta quae molestiae nobis illo tempora? Ullam, quae, aut! Qui officia quaerat tempore nisi. Quis, nemo necessitatibus. Ipsum consequatur provident deleniti tempora aut, doloribus at illum ad sit harum animi dolorum, optio maiores! Animi doloribus itaque omnis est suscipit, quod asperiores amet.</p>
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Lot/Hillside Cleaning Service for Fire Regulation">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -220,7 +271,11 @@
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
-            <a href="" class="btn btn-success">Request Service</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Stump Grinding">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
           </div>
         </div><br>
       </section>
@@ -232,6 +287,31 @@
       <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
     </a>
   </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="tel:8183621668"><i class="fa fa-phone" aria-hidden="true" style="font-size:20px"></i> (818) 362-1668</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="mailto:vgl@gmail.com"><i class="fa fa-envelope" aria-hidden="true" style="font-size:20px"></i> vgl@gmail.com</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="https://www.facebook.com/Valley-Green-Landscape-357663454652249/"><i class="fa fa-facebook-official" style="font-size:20px"></i> Valley Green Landscape</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <p class="text-muted">
+        Copyright (c) 2017 Valley Green Lanscape All Rights Reserved.
+      </p>
+    </div>
+  </footer>
 
 
 	<!--<div id="footer">

@@ -32,6 +32,7 @@ def index(request):
 
 
 def services(request):
+
     context = {}
 
     return render(request, 'valley_green_landscape/services.html', context)
@@ -99,7 +100,14 @@ def review_submission(request):
 
 
 def contact(request):
-    context = {}
+    if request.method == "POST":
+        subject = request.POST.get('requested-service')
+        context = {
+            'subject': subject,
+        }
+
+    else:
+        context = {}
 
     return render(request, 'valley_green_landscape/contact.html', context)
 
@@ -114,6 +122,7 @@ def send_email(request):
     if request.method == "POST":
         user_name = request.POST.get('user-name')
         user_email = request.POST.get('user-email')
+        user_phone = request.POST.get('user-phone')
 
         user_address = request.POST.get('address-line')
         user_city = request.POST.get('city-line')
@@ -129,26 +138,29 @@ def send_email(request):
 
         location = """
         {0}
-            {1}
-            {2},{3}
+        {1} {2}, {3}
         """.format(user_address, user_city, user_state, user_zip)
 
         email_body = """
         Subject:
             {0}
-        Email:
+            
+        Phone: 
             {1}
-
-        Name:
+            
+        Email:
             {2}
 
-        Location:
+        Name:
             {3}
 
-        Content:
+        Location:
             {4}
 
-        """.format(email_subject, user_email, user_name.upper(), location, user_message)
+        Content:
+            {5}
+
+        """.format(email_subject, user_phone, user_email, user_name.upper(), location, user_message)
 
 
         email = EmailMessage("{0} - {1}".format(user_name.upper(), email_subject), email_body,
@@ -170,7 +182,7 @@ def add_review(request):
 
     new_review = Review() #user=user_name, photo=photo_url, text=review_text)
 
-    new_review.user = user_name
+    new_review.user = User.objects.get(username=user_name)
 
     if len(photo_url) > 0:
         new_review.photo = photo_url

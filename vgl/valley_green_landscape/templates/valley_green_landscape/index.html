@@ -108,6 +108,21 @@
     <br>
   </div>
 
+  <div id="choose-us">
+    <div class="container text-center">
+      <h1>Why Choose Us?</h1>
+      <br><br>
+
+      <ul class="list-group">
+        <li class="list-group-item">We Have <strong>24+</strong> Years of Experience</li>
+        <li class="list-group-item">We Provide Our Services <strong>Every Day</strong> of the Week</li>
+        <li class="list-group-item">We Have Continuously Served <strong>100+</strong> Customers for Decades</li>
+        <li class="list-group-item">We Provide Quality Work</li>
+        <li class="list-group-item">Our Prices are Reasonable and Competitive</li>
+      </ul>
+    </div>
+  </div>
+
   <div id="popular-work">
     <div class="container text-center">
       <h1>Our Most Popular Work</h1>
@@ -117,74 +132,51 @@
       <div class="row">
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="..." alt="...">
+            <img src="http://www.homebase.co.uk/cmsresource/image/118078/landscape_ratio3x2/440/300/83e07e6e7930b687493cddb81bef27e2/mF/istock-000057793060-large.jpg" alt="...">
             <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              <h2>Gardening Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia voluptates est doloribus ea possimus dolorum ex, dolor suscipit, quod vero.</p><br>
+              <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="requested-service" value="Gardening Service">
+                <input type="submit" class="btn btn-success" value="Request Service">
+              </form></p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="..." alt="...">
+            <img src="http://artificialturfexpress.com/wp-content/uploads/2015/04/Artificialturf_support.jpg" alt="...">
             <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              <h2>Synthetic Turf Installation</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates architecto corporis ratione?</p><br>
+              <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="requested-service" value="Synthetic Turf Installation">
+                <input type="submit" class="btn btn-success" value="Request Service">
+              </form></p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="..." alt="...">
+            <img src="http://wichita-sprinklers.com/wp-content/uploads/2015/05/gal9.jpg" alt="...">
             <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              <h2>Sprinkler Installation</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ex cum eos, eligendi in voluptatum doloremque perferendis delectus this that them those they.</p><br>
+              <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="requested-service" value="Sprinkler Installation">
+                <input type="submit" class="btn btn-success" value="Request Service">
+              </form></p>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="row">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="..." alt="...">
-            <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="..." alt="...">
-            <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="..." alt="...">
-            <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+</div>
 
 
 	<div id="work-where">
@@ -240,23 +232,24 @@
           <a href="https://www.facebook.com/Valley-Green-Landscape-357663454652249/"><i class="fa fa-facebook-official" style="font-size:20px"></i> Valley Green Landscape</a>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <a href="http://instagram.com"><i class="fa fa-instagram" id="instagram" style="font-size:20px"></i></a>
+          <a href="http://instagram.com"><i class="fa fa-instagram" style="font-size:20px"></i> @Valley Green Landscape</a>
         </div>
       </div>
       <br>
       <br>
       <br>
       <p class="text-muted">
-        Copyright (c) 2017 Valley Green Lanscape All Rights Reserved.
+        Copyright © 2017 Valley Green Lanscape All Rights Reserved.
       </p>
     </div>
   </footer>
 
 <script type="text/javascript">
-  let job_names = ['Gardening Service', 'Sodding and Reseeding', 'Valve Replacement',
-                    'Sprinkler Installation',
-                    'Synthetic Turf Installation', 'Mulch and Gravel Design',
-                    'Tree Trimming', 'Palm and Tree Cleanup', 'Stump Grinding'];
+  let job_names = ['Gardening Service          ', 'Sodding and Reseeding      ', 'Valve Replacement          ', 'Sprinkler Installation     ', 'Synthetic Turf Installation', 'Mulch and Gravel Design    ', 'Tree Trimming              ', 'Palm and Tree Cleanup      ', 'Stump Grinding             '];
+  // ['Gardening Service', 'Sodding and Reseeding', 'Valve Replacement',
+  //                   'Sprinkler Installation',
+  //                   'Synthetic Turf Installation', 'Mulch and Gravel Design',
+  //                   'Tree Trimming', 'Palm and Tree Cleanup', 'Stump Grinding'];
   let counter = 1;
 
   $('#job-name-var').text(job_names[0]);

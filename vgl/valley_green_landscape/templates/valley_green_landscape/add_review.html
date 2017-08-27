@@ -73,7 +73,7 @@
       <h2>Please add your review below.</h2>
     </div> <br><br>
 
-    <form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post">
+    <form action="{% url 'valley_green_landscape:add_review' %}" class="text-left" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
@@ -88,7 +88,8 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <label>Photo URL</label>
-            <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">
+            <input type="file" class="form-control input-lg" name="profile-img">
+            {# <input type="text" placeholder="Add photo from URL (eg. https://my-website.com/my-image.jpg)" class="form-control input-lg" name="profile-img">#}
           </div>
         </div>
       </div>

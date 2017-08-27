@@ -8,6 +8,7 @@ from django.contrib import messages
 from math import floor
 from django.conf import settings
 import csv
+from .forms import ImageUploadForm
 
 
 def chunks(l, n):
@@ -174,26 +175,37 @@ def send_email(request):
         return HttpResponseRedirect(reverse('valley_green_landscape:contact'))
 
 
+def edit_review(request):
+    pass
+
+
 def add_review(request):
-    user_name = request.POST.get('user-name')
-    photo_url = request.POST.get('profile-img')
-    review_text = request.POST.get('review-text')
-    score = request.POST.get('review-score')
+    form = ImageUploadForm(request.POST, request.FILES)
 
-    new_review = Review() #user=user_name, photo=photo_url, text=review_text)
+    if form.is_valid():
+        photo = form.cleaned_data['image']
 
-    new_review.user = User.objects.get(username=user_name)
 
-    if len(photo_url) > 0:
-        new_review.photo = photo_url
+        user_name = request.POST.get('user-name')
 
-    new_review.text = review_text
-    new_review.score = score
-    new_review.star_score = int_to_star(int(score))
+        review_text = request.POST.get('review-text')
+        score = request.POST.get('review-score')
 
-    new_review.save()
+        new_review = Review() #user=user_name, photo=photo_url, text=review_text)
 
-    messages.add_message(request, messages.INFO, user_name)
+        new_review.user = User.objects.get(username=user_name)
+        #
+        # if len(photo_url) > 0:
+        #     new_review.photo = photo_url
+
+        new_review.text = review_text
+        new_review.photo = photo
+        new_review.score = score
+        new_review.star_score = int_to_star(int(score))
+
+        new_review.save()
+
+        messages.add_message(request, messages.INFO, user_name)
 
     return HttpResponseRedirect(reverse('valley_green_landscape:reviews'))
 

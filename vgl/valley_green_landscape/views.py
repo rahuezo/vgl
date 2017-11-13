@@ -21,7 +21,7 @@ def chunks(l, n):
 
 def index(request):
     with open(settings.MEDIA_ROOT + '/ok_cities.csv', 'rb') as csvfile:
-        rows = [row[0] for row in csv.reader(csvfile, delimiter=',')][:50]
+        rows = [row[0] for row in csv.reader(csvfile, delimiter=',')][:100]
 
     city_chunks = chunks(rows, 90)
 
@@ -145,10 +145,10 @@ def send_email(request):
         email_body = """
         Subject:
             {0}
-            
-        Phone: 
+
+        Phone:
             {1}
-            
+
         Email:
             {2}
 

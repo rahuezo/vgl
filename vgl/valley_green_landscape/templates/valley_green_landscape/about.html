@@ -41,9 +41,9 @@
 
         <ul class="nav navbar-nav navbar-right" id="top-links">
           <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
-          <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+          {# <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>#}
           <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
-          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Testimonials</a></li>
           <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
           <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
         </ul>
@@ -78,74 +78,78 @@
 
     <hr><br>
 
-		<div class="row about-person">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<img class="img-responsive" src="{% static 'valley_green_landscape/img/about/cecilio.jpg' %}">
-			</div>
+        <div class="row">
+            <img class="img-responsive" src="{% static 'valley_green_landscape/img/about/about-banner.png' %}">
+            <br>
+            <p class="lead text-center" id="about-paragraph">Cecilio Sandoval started his journey as a landscape professional in the early 1990s in Los Angeles. He started off as a day laborer, and quickly moved up the ladder to become the supervisor of [insert company name]. His love for gardening and landscaping made starting his own business an obvious choice. This now thriving business started as a one-man operation called Sandoval Landscaping and his attention to detail quickly won him lifetime clients. As business started booming, he expanded his business to include more family members. His sons, Raymond and Kevin Sandoval grew up watching their father work hard every day and in turn made them also fall in love with the work. Wanting to expand the business horizon of the company, Valley Green Landscape was born. Valley Green Landscape Incorporated is a family-owned business that is bonded and insured ready to provide both residential and commercial services. </p>
+        </div>
 
-			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">
-				<h2>Cecilio Sandoval</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum.
-				</p>
+		<!--<div class="row about-person">-->
+			<!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
+				<!--<img class="img-responsive" src="{% static 'valley_green_landscape/img/about/cecilio.jpg' %}">-->
+			<!--</div>-->
+
+			<!--<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">-->
+				<!--<h2>Cecilio Sandoval</h2>-->
+				<!--<p>This</p>-->
 
         <div class="alert alert-success text-center">
           <div id="phone">
-						<strong>Call Cecilio:</strong> <a href="tel:8185546274">(818) 554-6274</a>
+						<strong>Call Cecilio:</strong> <a href="tel:8185546274">(818) 554-6274</a><br><br>
+                        <strong>Call Raymond:</strong> <a href="tel:3239868962">(323) 986-8962</a><br><br>
+                        <strong>Call Kevin:</strong> <a href="tel:8184478383">(818) 447-8383</a>
 					</div>
         </div>
-			</div>
+			<!--</div>-->
 
-		</div>
+		<!--</div>-->
 
-    <hr>
+    <!--<hr>-->
 
-		<div class="row about-person">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-        <img class="img-responsive" src="{% static 'valley_green_landscape/img/about/raymond.jpg' %}">
-      </div>
+		<!--<div class="row about-person">-->
+      <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
+        <!--<img class="img-responsive" src="{% static 'valley_green_landscape/img/about/raymond.jpg' %}">-->
+      <!--</div>-->
 
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">
-        <h2>Raymond Sandoval</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore?.
-				</p>
+      <!--<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">-->
+        <!--<h2>Raymond Sandoval</h2>-->
+				<!--<p>-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore?.-->
+				<!--</p>-->
 
-        <div class="alert alert-success text-center">
-          <div id="phone">
-						<strong>Call Raymond:</strong> <a href="tel:3239868962">(323) 986-8962</a>
-					</div>
-        </div>
-			</div>
-		</div>
+        <!--<div class="alert alert-success text-center">-->
+          <!--<div id="phone">-->
+						<!--<strong>Call Raymond:</strong> <a href="tel:3239868962">(323) 986-8962</a>-->
+					<!--</div>-->
+        <!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
 
-    <hr>
+    <!--<hr>-->
 
-		<div class="row about-person">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<img class="img-responsive" src="{% static 'valley_green_landscape/img/about/kevin.jpg' %}">
-			</div>
+		<!--<div class="row about-person">-->
+			<!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
+				<!--<img class="img-responsive" src="{% static 'valley_green_landscape/img/about/kevin.jpg' %}">-->
+			<!--</div>-->
 
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">
-        <h2>Kevin Sandoval</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum.
-				</p>
+      <!--<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">-->
+        <!--<h2>Kevin Sandoval</h2>-->
+				<!--<p>-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum, inventore? Molestiae maiores ex earum.-->
+					<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt tempora eum rem, iusto qui quaerat, iste rerum harum tempore blanditiis deserunt quas. Sequi rerum.-->
+				<!--</p>-->
 
-        <div class="alert alert-success text-center">
-          <div id="phone">
-						<strong>Call Kevin:</strong> <a href="tel:8184478383">(818) 447-8383</a>
-					</div>
-        </div>
-			</div>
-		</div>
+        <!--<div class="alert alert-success text-center">-->
+          <!--<div id="phone">-->
+						<!--<strong>Call Kevin:</strong> <a href="tel:8184478383">(818) 447-8383</a>-->
+					<!--</div>-->
+        <!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
   </div>
   <footer class="footer">
     <div class="container text-center">

@@ -41,9 +41,9 @@
 
         <ul class="nav navbar-nav navbar-right" id="top-links">
           <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
-          <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
+          {# <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>#}
           <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
-          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Testimonials</a></li>
           <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
           <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
         </ul>
@@ -115,36 +115,6 @@
         </div><br>
       </section>
 
-      <section class="review-container even" id="valve-replacement">
-        <h2>Irrigation Valve Replacement</h2>
-        <p>Got a leaky irrigation valve?</p>
-        <div class="service-menu">
-          <div class="row pull-right">
-            <a href="" class="btn btn-info">See Gallery</a>
-            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
-              {% csrf_token %}
-              <input type="hidden" name="requested-service" value="Valve Replacement">
-              <input type="submit" class="btn btn-success" value="Request Service">
-            </form>
-          </div>
-        </div><br>
-      </section>
-
-      <section class="review-container" id="sprinkler-installation">
-        <h2>Sprinkler Installation</h2>
-        <p></p>
-        <div class="service-menu">
-          <div class="row pull-right">
-            <a href="" class="btn btn-info">See Gallery</a>
-            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
-              {% csrf_token %}
-              <input type="hidden" name="requested-service" value="Sprinkler Installation">
-              <input type="submit" class="btn btn-success" value="Request Service">
-            </form>
-          </div>
-        </div><br>
-      </section>
-
       <section class="review-container even" id="hardscape-design-and-installation">
         <h2>Hardscape Design and Installation</h2>
         <p>Do you want your home to look good and at the same time be environmentally conscious? Try outfitting your home with a hardscape which will give your home a modern look whole year round.</p>
@@ -154,66 +124,6 @@
             <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
               {% csrf_token %}
               <input type="hidden" name="requested-service" value="Hardscape Design and Installation">
-              <input type="submit" class="btn btn-success" value="Request Service">
-            </form>
-          </div>
-        </div><br>
-      </section>
-
-      <section class="review-container">
-        <h2>Synthetic Turf Maintenance and Installation</h2>
-        <p></p>
-        <div class="service-menu">
-          <div class="row pull-right">
-            <a href="" class="btn btn-info">See Gallery</a>
-            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
-              {% csrf_token %}
-              <input type="hidden" name="requested-service" value="Synthetic Turf Maintenance and Installation">
-              <input type="submit" class="btn btn-success" value="Request Service">
-            </form>
-          </div>
-        </div><br>
-      </section>
-
-      <section class="review-container even">
-        <h2>Concrete Curb</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et alias corrupti ex unde aspernatur, magni nam officia, dolorem, ut odio dolores! Id vel, rem, a, quas aut beatae autem sit quod repellat ea eaque officiis explicabo consectetur, odit assumenda temporibus odio fugiat dolores in. Veritatis sunt unde perspiciatis necessitatibus similique quos, fugit? Exercitationem explicabo fugiat ad culpa sint excepturi cumque, labore quae nesciunt facilis hic neque incidunt enim, perspiciatis tempora, asperiores! Earum amet, ad at sunt voluptas magnam excepturi eligendi pariatur voluptatibus maxime, optio accusantium iure nam possimus inventore. Soluta.</p>
-        <div class="service-menu">
-          <div class="row pull-right">
-            <a href="" class="btn btn-info">See Gallery</a>
-            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
-              {% csrf_token %}
-              <input type="hidden" name="requested-service" value="Concrete Curb">
-              <input type="submit" class="btn btn-success" value="Request Service">
-            </form>
-          </div>
-        </div><br>
-      </section>
-
-      <section class="review-container">
-        <h2>Mulch and Gravel Design</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, architecto, laboriosam! Debitis, blanditiis quaerat fugit, officiis recusandae perspiciatis eveniet expedita amet reiciendis pariatur. Optio aperiam animi nihil dolorem error nulla perspiciatis delectus enim. Necessitatibus ducimus dolorem sapiente inventore ut ab nobis qui. Sit, atque expedita porro. Facere voluptates, fugiat fuga. Odit, a veritatis dolorem ratione quod cupiditate nostrum sed obcaecati iusto, excepturi, consectetur dolor! Magni quidem ab enim magnam qui deleniti cumque incidunt cum aliquam facilis cupiditate ad, adipisci delectus aliquid officia perferendis eius suscipit, temporibus totam maxime laborum. Doloribus.</p>
-        <div class="service-menu">
-          <div class="row pull-right">
-            <a href="" class="btn btn-info">See Gallery</a>
-            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
-              {% csrf_token %}
-              <input type="hidden" name="requested-service" value="Mulch and Gravel Design">
-              <input type="submit" class="btn btn-success" value="Request Service">
-            </form>
-          </div>
-        </div><br>
-      </section>
-
-      <section class="review-container even">
-        <h2>Drip System Installation and Repair</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus non laborum accusamus provident! Soluta nihil quis, aspernatur hic autem voluptates itaque magnam nemo omnis mollitia facere provident sequi reprehenderit, ex minima cupiditate quasi necessitatibus quas delectus ab fugiat rem enim molestiae incidunt odio. Pariatur dolores, repudiandae maxime aperiam ducimus praesentium nostrum dolorum omnis accusantium libero veritatis illum maiores provident molestias assumenda quisquam exercitationem error nobis voluptates ad eaque ex voluptatum amet necessitatibus. Optio deserunt facilis sed et earum rerum similique?</p>
-        <div class="service-menu">
-          <div class="row pull-right">
-            <a href="" class="btn btn-info">See Gallery</a>
-            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
-              {% csrf_token %}
-              <input type="hidden" name="requested-service" value="Drip System Installation and Repair">
               <input type="submit" class="btn btn-success" value="Request Service">
             </form>
           </div>
@@ -234,10 +144,104 @@
           </div>
         </div><br>
       </section>
+      <hr>
+      <h1 class="text-center">Other Services</h1><br>
+
+      <section class="review-container even" id="valve-replacement">
+        <h2>Irrigation Valve Replacement</h2>
+        {# <p>Got a leaky irrigation valve?</p>#}
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Valve Replacement">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container" id="sprinkler-installation">
+        <h2>Sprinkler Installation</h2>
+        {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Sprinkler Installation">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+          </div>
+        </div><br>
+      </section>
+
+
+
+      <section class="review-container even">
+        <h2>Synthetic Turf Maintenance and Installation</h2>
+        {# <p></p>#}
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Synthetic Turf Maintenance and Installation">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Concrete Curb</h2>
+        {# <p></p>#}
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Concrete Curb">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container even">
+        <h2>Mulch and Gravel Design</h2>
+        {# <p></p>#}
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Mulch and Gravel Design">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+          </div>
+        </div><br>
+      </section>
+
+      <section class="review-container">
+        <h2>Drip System Installation and Repair</h2>
+        {# <p></p>#}
+        <div class="service-menu">
+          <div class="row pull-right">
+            <a href="" class="btn btn-info">See Gallery</a>
+            <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <input type="hidden" name="requested-service" value="Drip System Installation and Repair">
+              <input type="submit" class="btn btn-success" value="Request Service">
+            </form>
+          </div>
+        </div><br>
+      </section>
 
       <section class="review-container even">
         <h2>Palm and Tree Cleanup</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nisi, sit quam unde vero voluptatum ipsum. Facere, dolor, nostrum. Temporibus perspiciatis, ea inventore sit obcaecati eos, facilis modi dolorem soluta error illum, eligendi, non fugit explicabo delectus et aperiam tempore vero harum similique. Consequatur iste reiciendis, mollitia modi unde et quas nemo ducimus recusandae accusantium, corporis, sunt! Explicabo, culpa similique!</p>
+        {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nisi, sit quam unde vero voluptatum ipsum. Facere, dolor, nostrum. Temporibus perspiciatis, ea inventore sit obcaecati eos, facilis modi dolorem soluta error illum, eligendi, non fugit explicabo delectus et aperiam tempore vero harum similique. Consequatur iste reiciendis, mollitia modi unde et quas nemo ducimus recusandae accusantium, corporis, sunt! Explicabo, culpa similique!</p>#}
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
@@ -252,7 +256,7 @@
 
       <section class="review-container">
         <h2>Lot/Hillside Cleaning for Fire Regulation</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, possimus, voluptas. Dicta, repellendus. Quis eveniet saepe esse at quae, dicta modi autem nulla reprehenderit, fugit voluptatem! Consectetur asperiores similique, saepe quisquam optio fuga animi laboriosam sunt accusamus expedita culpa harum nemo quibusdam id dolores quas praesentium fugiat recusandae eligendi! Voluptatibus assumenda iure delectus excepturi accusamus tempora. Quo in commodi incidunt nesciunt repellat velit eveniet sequi molestias et, dolorem numquam porro, nihil laudantium quas odio consequuntur delectus minima saepe dicta quae molestiae nobis illo tempora? Ullam, quae, aut! Qui officia quaerat tempore nisi. Quis, nemo necessitatibus. Ipsum consequatur provident deleniti tempora aut, doloribus at illum ad sit harum animi dolorum, optio maiores! Animi doloribus itaque omnis est suscipit, quod asperiores amet.</p>
+        {# <p></p>#}
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>
@@ -267,7 +271,7 @@
 
       <section class="review-container even">
         <h2>Stump Grinding</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem excepturi culpa blanditiis voluptatum velit. Iusto voluptatem neque tempore impedit ex, quaerat doloribus iste, vitae, sequi ipsum temporibus, magnam natus necessitatibus inventore. Saepe consequuntur, assumenda mollitia, dolor omnis laboriosam sit, eius, aliquid repellat atque aperiam consectetur fugiat. Laudantium doloremque voluptate impedit, reprehenderit libero, et quam, unde incidunt vitae nisi eum officia perferendis saepe, dignissimos. Eligendi, recusandae, dolore! Temporibus eius tempora nulla rerum dolores, dolorem beatae? Quos tempore minima maxime atque, commodi?</p>
+        {# <p></p>#}
         <div class="service-menu">
           <div class="row pull-right">
             <a href="" class="btn btn-info">See Gallery</a>

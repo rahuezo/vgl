@@ -1027,3 +1027,8 @@ footer a:hover {
       display:block !important;
   }
 }
+
+
+#about-paragraph {
+  line-height: 1.8em;
+}

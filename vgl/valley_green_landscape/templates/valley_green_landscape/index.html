@@ -43,7 +43,7 @@
           <li><a href="{% url 'valley_green_landscape:index' %}">Home</a></li>
           <li><a href="{% url 'valley_green_landscape:gallery' %}">Gallery</a></li>
           <li><a href="{% url 'valley_green_landscape:services' %}">Services</a></li>
-          <li><a href="{% url 'valley_green_landscape:reviews' %}">Reviews</a></li>
+          <li><a href="{% url 'valley_green_landscape:reviews' %}">Testimonials</a></li>
           <li><a href="{% url 'valley_green_landscape:contact' %}" class="current">Contact</a></li>
           <li><a href="{% url 'valley_green_landscape:about' %}">About Us</a></li>
         </ul>
@@ -100,12 +100,16 @@
       </div>
     </div>
     <br>
+    {% comment %}
+
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
         <a href="{% url 'valley_green_landscape:gallery' %}" class="hero-btn">Take a Look at Our Work</a>
       </div>
     </div>
+
     <br>
+    {% endcomment %}
   </div>
 
   <div id="choose-us">
@@ -132,10 +136,10 @@
       <div class="row">
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="http://www.homebase.co.uk/cmsresource/image/118078/landscape_ratio3x2/440/300/83e07e6e7930b687493cddb81bef27e2/mF/istock-000057793060-large.jpg" alt="...">
+            <img src="http://weknowyourdreams.com/images/garden/garden-03.jpg" alt="...">
             <div class="caption">
               <h2>Gardening Service</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia voluptates est doloribus ea possimus dolorum ex, dolor suscipit, quod vero.</p><br>
+              <p>First impressions matter and one of the best ways to create an inviting home is by taking care of your lawn.</p><br>
               <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
                 {% csrf_token %}
                 <input type="hidden" name="requested-service" value="Gardening Service">
@@ -149,8 +153,8 @@
           <div class="thumbnail">
             <img src="http://artificialturfexpress.com/wp-content/uploads/2015/04/Artificialturf_support.jpg" alt="...">
             <div class="caption">
-              <h2>Synthetic Turf Installation</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates architecto corporis ratione?</p><br>
+              <h2>Synthetic Turf</h2>
+              <p>Want a green lawn year-round? Opt for synthetic turf and we will take care of the installation and maintenance.</p><br>
               <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
                 {% csrf_token %}
                 <input type="hidden" name="requested-service" value="Synthetic Turf Installation">
@@ -165,7 +169,7 @@
             <img src="http://wichita-sprinklers.com/wp-content/uploads/2015/05/gal9.jpg" alt="...">
             <div class="caption">
               <h2>Sprinkler Installation</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ex cum eos, eligendi in voluptatum doloremque perferendis delectus this that them those they.</p><br>
+              <p>Don't have time to water your lawn? Let us automate the process for you by installing a new irrigation system.</p><br>
               <form action="{% url 'valley_green_landscape:contact' %}" method="post" style="display:inline;">
                 {% csrf_token %}
                 <input type="hidden" name="requested-service" value="Sprinkler Installation">
